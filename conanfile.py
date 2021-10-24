@@ -2,22 +2,19 @@ from conans import ConanFile, CMake
 
 
 class SampleConan(ConanFile):
-    name = "sample"
-    version = "0.3"
+    name = "boilerplate-conan"
+    version = "0.1.0"
     license = "MIT"
     author = "kannkyo 15080890+kannkyo@users.noreply.github.com"
     url = "https://github.com/kannkyo/boilerplate-conan"
-    description = "Conan package sample"
-    topics = ("conan", "sample")
+    description = "Conan package boilerplate"
+    topics = ("conan", "boilerplate")
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "fPIC": [True, False]}
     default_options = {"shared": False, "fPIC": True}
     generators = "cmake"
     exports_sources = "src/*"
-    requires = [
-        "poco/1.9.4",
-        "cunit"
-    ]
+    requires = "poco/1.9.4"
 
     def config_options(self):
         if self.settings.os == "Windows":

@@ -3,7 +3,7 @@
 set -e
 set -x
 
-USER_CHANNEL=$1
+source ./bin/env.sh
 
 mkdir -p build
 pushd build
