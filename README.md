@@ -1,6 +1,6 @@
 # boilerplate-conan
 
-Conan を使用して、cunit テストを実谷するプロジェクト用のサンプルである。
+Conan を使用して、cunit テストを実行するプロジェクト用のサンプルである。
 
 ## 環境構築
 
