@@ -92,7 +92,7 @@ requires = "cunit/2.1.3", "hoge/1.2.3"
 version = "0.1.0"
 ```
 
-[poetry.toml](poetry.toml) の `version` 変数を更新する。
+[pyproject.toml](pyproject.toml) の `version` 変数を更新する。
 
 ```toml
 version = "0.1.0"
