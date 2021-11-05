@@ -1,0 +1,20 @@
+{
+  "version": "14.0.0",
+  "vulnerabilities": [],
+  "remediations": [],
+  "scan": {
+    "scanner": {
+      "id": "semgrep",
+      "name": "Semgrep",
+      "url": "https://github.com/returntocorp/semgrep",
+      "vendor": {
+        "name": "GitLab"
+      },
+      "version": "0.69.1"
+    },
+    "type": "sast",
+    "start_time": "2021-10-23T06:32:22",
+    "end_time": "2021-10-23T06:32:29",
+    "status": "success"
+  }
+}

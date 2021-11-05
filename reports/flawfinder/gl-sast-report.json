@@ -1,0 +1,1652 @@
+{
+  "version": "14.0.3",
+  "vulnerabilities": [
+    {
+      "id": "9a3ebf511f4816b98b0cbd0353fc26ebb57703746ccfd184c41f1b9b1f9431b3",
+      "category": "sast",
+      "message": "Never create NULL ACLs; an attacker can set it to Everyone (Deny All Access), which would even forbid administrator access (CWE-732).",
+      "cve": "src/flawfinder/test.c:38b7113ec561db0306ef4d1be552cca1fcf3efbcb3c9d819d12b86d4a7aac6f1:CWE-732",
+      "severity": "Critical",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 77
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - SetSecurityDescriptorDacl",
+          "value": "SetSecurityDescriptorDacl"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-732",
+          "value": "732",
+          "url": "https://cwe.mitre.org/data/definitions/732.html"
+        }
+      ]
+    },
+    {
+      "id": "9a3ebf511f4816b98b0cbd0353fc26ebb57703746ccfd184c41f1b9b1f9431b3",
+      "category": "sast",
+      "message": "Never create NULL ACLs; an attacker can set it to Everyone (Deny All Access), which would even forbid administrator access (CWE-732).",
+      "cve": "src/flawfinder/test.c:38b7113ec561db0306ef4d1be552cca1fcf3efbcb3c9d819d12b86d4a7aac6f1:CWE-732",
+      "severity": "Critical",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 77
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - SetSecurityDescriptorDacl",
+          "value": "SetSecurityDescriptorDacl"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-732",
+          "value": "732",
+          "url": "https://cwe.mitre.org/data/definitions/732.html"
+        }
+      ]
+    },
+    {
+      "id": "915927bee579278da4959a65dd5770aa25728e0164e32e18eab1de7e6302c265",
+      "category": "sast",
+      "message": "Does not check for buffer overflows (CWE-120, CWE-20).",
+      "cve": "src/flawfinder/test.c:6a5bb383fb44030b0d9428b17359e94ba3979bc1ce702be450427f85592c649a:CWE-120, CWE-20",
+      "severity": "Critical",
+      "solution": "Use fgets() instead.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 34
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - gets",
+          "value": "gets"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-20",
+          "value": "20",
+          "url": "https://cwe.mitre.org/data/definitions/20.html"
+        }
+      ]
+    },
+    {
+      "id": "e5cf57e2baa68a1fd3ae3b0809c35ea70853a6a08fd63bfb7096c2a96454a496",
+      "category": "sast",
+      "message": "Easily used incorrectly (e.g., incorrectly computing the correct maximum size to add) [MS-banned] (CWE-120).",
+      "cve": "src/flawfinder/test.c:759a64fbedfa714dccb60cf414ace74ced7779ffc0e0f71e2b989a7f7d6c9291:CWE-120",
+      "severity": "Critical",
+      "solution": "Consider strcat_s, strlcat, snprintf, or automatically resizing strings.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 60
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - strncat",
+          "value": "strncat"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ]
+    },
+    {
+      "id": "9fa5edff1f1b22f9dced31d7601f0b412c38aa0cb581971f029ebe0d6dd695da",
+      "category": "sast",
+      "message": "Requires maximum length in CHARACTERS, not bytes (CWE-120).",
+      "cve": "src/flawfinder/test.c:90fd3a46ef543a44662c2b88c38920f8f9d1cd789ab3bf4617b859b474603c75:CWE-120",
+      "severity": "Critical",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 66
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - MultiByteToWideChar",
+          "value": "MultiByteToWideChar"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ]
+    },
+    {
+      "id": "b1573e4ec5e2b56bc5f9d22c1b0e9b99b06280f67ddf52cdd2b36bc063375990",
+      "category": "sast",
+      "message": "Easily used incorrectly (e.g., incorrectly computing the correct maximum size to add) [MS-banned] (CWE-120).",
+      "cve": "src/flawfinder/test.c:ba49a2d348377e91e6e74896d7f0eef856b52ec29336833a931ee570b74c71cf:CWE-120",
+      "severity": "Critical",
+      "solution": "Consider strcat_s, strlcat, or automatically resizing strings.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 61
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - _tcsncat",
+          "value": "_tcsncat"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ]
+    },
+    {
+      "id": "8c0f8d66fc94ffdbcec9f2038d364ef0dc403bbfc84751430719a94f2a7fde98",
+      "category": "sast",
+      "message": "Requires maximum length in CHARACTERS, not bytes (CWE-120).",
+      "cve": "src/flawfinder/test.c:d171177dc98327097183ca90caf74a56cdc051a2b0d022f6576950d06b400cc8:CWE-120",
+      "severity": "Critical",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 64
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - MultiByteToWideChar",
+          "value": "MultiByteToWideChar"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ]
+    },
+    {
+      "id": "9d3e13307568329985d444776d15e2d245cb15047f8544ce004558d18d47478f",
+      "category": "sast",
+      "message": "Potential format string problem (CWE-134).",
+      "cve": "src/flawfinder/test.c:16ebc2ff96ee4bab2695783709e97b597ca9c8b8cc149e33aed859f0fafd3431:CWE-134",
+      "severity": "High",
+      "solution": "Make format string constant.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 24
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - sprintf",
+          "value": "sprintf"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-134",
+          "value": "134",
+          "url": "https://cwe.mitre.org/data/definitions/134.html"
+        }
+      ]
+    },
+    {
+      "id": "72767ea887ab0f048540869d6963dc7934a7e30f5505ea72bd00feda71062ec8",
+      "category": "sast",
+      "message": "If syslog's format strings can be influenced by an attacker, they can be exploited (CWE-134).",
+      "cve": "src/flawfinder/test.c:22e98963d5af7b197a090bd522d2d39b8d8ee7bdf08453fd2008939c92cd9677:CWE-134",
+      "severity": "High",
+      "solution": "Use a constant format string for syslog.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 40
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - syslog",
+          "value": "syslog"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-134",
+          "value": "134",
+          "url": "https://cwe.mitre.org/data/definitions/134.html"
+        }
+      ]
+    },
+    {
+      "id": "f3ab5b8345a54f48ba06c93c8bbdad4c212002eb1b65e2a6ddee5d944eb0204e",
+      "category": "sast",
+      "message": "The scanf() family's %s operation, without a limit specification, permits buffer overflows (CWE-120, CWE-20).",
+      "cve": "src/flawfinder/test.c:3f169dd9fe508f70438f818770a3cb8b0f228e4245ea11a929a5fb0a7839fd5f:CWE-120, CWE-20",
+      "severity": "High",
+      "solution": "Specify a limit to %s, or use a different input function.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 27
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - scanf",
+          "value": "scanf"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-20",
+          "value": "20",
+          "url": "https://cwe.mitre.org/data/definitions/20.html"
+        }
+      ]
+    },
+    {
+      "id": "8815ecf87dc0d8e97f6d4917ed8b009561da1afb1ab9f3fb600c4942607adcfe",
+      "category": "sast",
+      "message": "The scanf() family's %s operation, without a limit specification, permits buffer overflows (CWE-120, CWE-20).",
+      "cve": "src/flawfinder/test.c:3f169dd9fe508f70438f818770a3cb8b0f228e4245ea11a929a5fb0a7839fd5f:CWE-120, CWE-20",
+      "severity": "High",
+      "solution": "Specify a limit to %s, or use a different input function.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 29
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - scanf",
+          "value": "scanf"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-20",
+          "value": "20",
+          "url": "https://cwe.mitre.org/data/definitions/20.html"
+        }
+      ]
+    },
+    {
+      "id": "16d85c161a2cc7a40fbca80b7c2dfd92c2576e4fe92dc46c7c9911fcbc0da17d",
+      "category": "sast",
+      "message": "If format strings can be influenced by an attacker, they can be exploited (CWE-134).",
+      "cve": "src/flawfinder/test.c:46f42896019245d2dffc4caf4fe018b073ce2a58203676eaa28b6374558a5b5d:CWE-134",
+      "severity": "High",
+      "solution": "Use a constant for the format specification.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 25
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - printf",
+          "value": "printf"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-134",
+          "value": "134",
+          "url": "https://cwe.mitre.org/data/definitions/134.html"
+        }
+      ]
+    },
+    {
+      "id": "c993117eb24c8303d7dccd4f653fcc6abc4001e315108d72f4594eaae9917fb5",
+      "category": "sast",
+      "message": "Does not check for buffer overflows (CWE-120).",
+      "cve": "src/flawfinder/test.c:814237858ab012010f3355a49480dd6fa0a2cb8cf8356a98ac1c17c9febf6521:CWE-120",
+      "severity": "High",
+      "solution": "Use sprintf_s, snprintf, or vsnprintf.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 22
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - sprintf",
+          "value": "sprintf"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ]
+    },
+    {
+      "id": "05356f8f64c230a76f526967607817013284fbcc80fae882337d0b8da622f472",
+      "category": "sast",
+      "message": "Does not check for buffer overflows when concatenating to destination [MS-banned] (CWE-120).",
+      "cve": "src/flawfinder/test.c:86d3363a9e08926d42f890aefd2dcacc6d978882f1caaacfda510c29c4900e96:CWE-120",
+      "severity": "High",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 56
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - lstrcat",
+          "value": "lstrcat"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ]
+    },
+    {
+      "id": "eb527c16ebd96083cbbd3c06e9a8a3ebd6f839a266ed34d66e9479f183c2e325",
+      "category": "sast",
+      "message": "Does not check for buffer overflows (CWE-120).",
+      "cve": "src/flawfinder/test.c:b793f18f143fb2297c49e0639384ad73db86eb01a44377aa4d5d09b44b03d747:CWE-120",
+      "severity": "High",
+      "solution": "Use sprintf_s, snprintf, or vsnprintf.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 23
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - sprintf",
+          "value": "sprintf"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ]
+    },
+    {
+      "id": "b69418517b46a91982c87dfaea6b0ebeccb88d37bc0fc76fdfc3a74c758de03f",
+      "category": "sast",
+      "message": "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120).",
+      "cve": "src/flawfinder/test.c:c01c8472bb53022e912da4da2faebc67d537855da324020c44bfd5e608a79b77:CWE-120",
+      "severity": "High",
+      "solution": "Consider using snprintf, strcpy_s, or strlcpy (warning: strncpy easily misused).",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 19
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - strcpy",
+          "value": "strcpy"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ]
+    },
+    {
+      "id": "6cf0e805da34282a728cb636a85d2536406e4623c725d942483746088c69bf6c",
+      "category": "sast",
+      "message": "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120).",
+      "cve": "src/flawfinder/test.c:e302054f5a14acdc343d7d38755ae57c098bc92eda1b5cab8443f51cf681efc5:CWE-120",
+      "severity": "High",
+      "solution": "Consider using a function version that stops copying at the end of the buffer.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 49
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - _mbscpy",
+          "value": "_mbscpy"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ]
+    },
+    {
+      "id": "b32bd7c6668c74e6de39495f942d1df81957a534ac331afe85bc4d0fbfa21458",
+      "category": "sast",
+      "message": "This causes a new process to execute and is difficult to use safely (CWE-78).",
+      "cve": "src/flawfinder/test.c:3c712b38d0857bde3832d85ad35ac9859be55c5f5f1c20af659a577dd4d0acbf:CWE-78",
+      "severity": "Medium",
+      "solution": "Specify the application path in the first argument, NOT as part of the second, or embedded spaces could allow an attacker to force a different program to run.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 79
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - CreateProcess",
+          "value": "CreateProcess"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-78",
+          "value": "78",
+          "url": "https://cwe.mitre.org/data/definitions/78.html"
+        }
+      ]
+    },
+    {
+      "id": "b32bd7c6668c74e6de39495f942d1df81957a534ac331afe85bc4d0fbfa21458",
+      "category": "sast",
+      "message": "This causes a new process to execute and is difficult to use safely (CWE-78).",
+      "cve": "src/flawfinder/test.c:3c712b38d0857bde3832d85ad35ac9859be55c5f5f1c20af659a577dd4d0acbf:CWE-78",
+      "severity": "Medium",
+      "solution": "Specify the application path in the first argument, NOT as part of the second, or embedded spaces could allow an attacker to force a different program to run.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 79
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - CreateProcess",
+          "value": "CreateProcess"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-78",
+          "value": "78",
+          "url": "https://cwe.mitre.org/data/definitions/78.html"
+        }
+      ]
+    },
+    {
+      "id": "74c281c80c9762f958e05ee72bd09c96622b34f74059546ee4567560adb85c71",
+      "category": "sast",
+      "message": "Ensure that the full path to the library is specified, or current directory may be used (CWE-829, CWE-20).",
+      "cve": "src/flawfinder/test.c:8295c8ceff2982e808c80a687a005f0cfe96efccde3a3b174ac9b03599117db9:CWE-829, CWE-20",
+      "severity": "Medium",
+      "solution": "Use a flag like LOAD_LIBRARY_SEARCH_SYSTEM32 or LOAD_LIBRARY_SEARCH_APPLICATION_DIR to search only desired folders.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 81
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - LoadLibraryEx",
+          "value": "LoadLibraryEx"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-829",
+          "value": "829",
+          "url": "https://cwe.mitre.org/data/definitions/829.html"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-20",
+          "value": "20",
+          "url": "https://cwe.mitre.org/data/definitions/20.html"
+        }
+      ]
+    },
+    {
+      "id": "930d49ee08c99c555f34bc2116761c1df0aa8916d97ff3bd66ea65bf7f804bef",
+      "category": "sast",
+      "message": "Some older implementations do not protect against internal buffer overflows (CWE-120, CWE-20).",
+      "cve": "src/flawfinder/test.c:911fca84264de319ba31e726080aa6ce6bbb2844fc2101b989bc84950825a7c1:CWE-120, CWE-20",
+      "severity": "Medium",
+      "solution": "Check implementation on installation, or limit the size of all string inputs.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 99
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - getopt_long",
+          "value": "getopt_long"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-20",
+          "value": "20",
+          "url": "https://cwe.mitre.org/data/definitions/20.html"
+        }
+      ]
+    },
+    {
+      "id": "898ac64bd0379de6cc88d3ac0842f8d59c53fd4cada8da9396784323fca82d53",
+      "category": "sast",
+      "message": "Statically-sized arrays can be improperly restricted, leading to potential overflows or other issues (CWE-119!/CWE-120).",
+      "cve": "src/flawfinder/test.c:213de8e8815fc84c423b55fd845fea541f25744718e486234364bb457863b597:CWE-119!/CWE-120",
+      "severity": "Low",
+      "solution": "Perform bounds checking, use functions that limit length, or ensure that the size is larger than the maximum possible length.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 46
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - char",
+          "value": "char"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-119",
+          "value": "119",
+          "url": "https://cwe.mitre.org/data/definitions/119.html"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ]
+    },
+    {
+      "id": "2711b973963fdddecdf9857dde078534d901505ca9fee980b75d804f38ad1c46",
+      "category": "sast",
+      "message": "Check when opening files - can an attacker redirect it (via symlinks), force the opening of special file type (e.g., device files), move things around to create a race condition, control its ancestors, or change its contents? (CWE-362).",
+      "cve": "src/flawfinder/test.c:2ec6928c77a8b54caa61d0459f367c4394ee1f5e6f488753f587bfa9c780bad8:CWE-362",
+      "severity": "Low",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 107
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - fopen",
+          "value": "fopen"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-362",
+          "value": "362",
+          "url": "https://cwe.mitre.org/data/definitions/362.html"
+        }
+      ]
+    },
+    {
+      "id": "d06d7bc25bec6441f91c6cd245db2f7e43d175d59ec649564cd93d9fcc36ee71",
+      "category": "sast",
+      "message": "Does not check for buffer overflows when copying to destination (CWE-120).",
+      "cve": "src/flawfinder/test.c:329690be18f9e703c01353385366cdf110d97daafb2175fcf3ef4fbf4b9d1450:CWE-120",
+      "severity": "Low",
+      "solution": "Make sure destination can always hold the source data.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 54
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - memcpy",
+          "value": "memcpy"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ]
+    },
+    {
+      "id": "2fc9b74a4b4f7ca4a7c53b9a0b2d2eb3b2c6cec89b0d2285d7ab762c2a94579d",
+      "category": "sast",
+      "message": "Statically-sized arrays can be improperly restricted, leading to potential overflows or other issues (CWE-119!/CWE-120).",
+      "cve": "src/flawfinder/test.c:36c87517700337a59cc3ad3218cfdde56cad37d69cdeccee5a55ab232d5c7946:CWE-119!/CWE-120",
+      "severity": "Low",
+      "solution": "Perform bounds checking, use functions that limit length, or ensure that the size is larger than the maximum possible length.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 45
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - char",
+          "value": "char"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-119",
+          "value": "119",
+          "url": "https://cwe.mitre.org/data/definitions/119.html"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ]
+    },
+    {
+      "id": "267dbbb99587a5e8276ea82596f164bcec5a0113cc0ec514af21f9910d4307ae",
+      "category": "sast",
+      "message": "Does not check for buffer overflows when copying to destination (CWE-120).",
+      "cve": "src/flawfinder/test.c:4502a133e64edef215e6bb50225ce215dcce883f833254d15dff4990f6188d3f:CWE-120",
+      "severity": "Low",
+      "solution": "Make sure destination can always hold the source data.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 50
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - memcpy",
+          "value": "memcpy"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ]
+    },
+    {
+      "id": "7ac34e0e9b000d052acb778ab020d340dcfb3448ca6e943af1d901d1d1a7cd8c",
+      "category": "sast",
+      "message": "Requires maximum length in CHARACTERS, not bytes (CWE-120).",
+      "cve": "src/flawfinder/test.c:585149de9f478b1cb3b542fe121ea5b72b3dc4ab9b96d6aabd471fa924cb6bf3:CWE-120",
+      "severity": "Low",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 68
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - MultiByteToWideChar",
+          "value": "MultiByteToWideChar"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ]
+    },
+    {
+      "id": "45e9b03127ac5e61409f6ba228d8a3a6098bee366fd54476cd44e923afec0c8e",
+      "category": "sast",
+      "message": "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120).",
+      "cve": "src/flawfinder/test.c:7183a6428d15b78290784e3ded5251a2fb7e4df4ef595558568b58cbf728b1d9:CWE-120",
+      "severity": "Low",
+      "solution": "Consider using snprintf, strcpy_s, or strlcpy (warning: strncpy easily misused).",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 17
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - strcpy",
+          "value": "strcpy"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ]
+    },
+    {
+      "id": "2c58e1827a5ef09067992a937923402e77459bdd313e3964e461c88b33701c7c",
+      "category": "sast",
+      "message": "Does not check for buffer overflows when copying to destination (CWE-120).",
+      "cve": "src/flawfinder/test.c:769851c8a7c57d7407073e084b60927d9e7e85a851a2b84bcd17a8c0a8dbdfd4:CWE-120",
+      "severity": "Low",
+      "solution": "Make sure destination can always hold the source data.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 55
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - CopyMemory",
+          "value": "CopyMemory"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ]
+    },
+    {
+      "id": "cef0faeb2bd997585b64c83c06dd1fbe61eb3f4eef407c83443820483e33e7a8",
+      "category": "sast",
+      "message": "Does not check for buffer overflows when copying to destination (CWE-120).",
+      "cve": "src/flawfinder/test.c:7e152129c536ef462681740c19a11d36ea28f65189dee67bbc678eefcc34f197:CWE-120",
+      "severity": "Low",
+      "solution": "Make sure destination can always hold the source data.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 53
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - memcpy",
+          "value": "memcpy"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ]
+    },
+    {
+      "id": "37ed230ae81279deeddffd0ca141ae38cda81fb6bf8857f0525ab2b7a8469fc0",
+      "category": "sast",
+      "message": "Easily used incorrectly (e.g., incorrectly computing the correct maximum size to add) [MS-banned] (CWE-120).",
+      "cve": "src/flawfinder/test.c:838ad60f18c4ec6230a499eaff86a608408c0afb92cb22bd9d61defd0b2c4acb:CWE-120",
+      "severity": "Low",
+      "solution": "Consider strcat_s, strlcat, snprintf, or automatically resizing strings.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 59
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - strncat",
+          "value": "strncat"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ]
+    },
+    {
+      "id": "6f9ae3bdd2acb052a2ac45a76cbbe3cd2a8b635579b1317a6e3669af2bb440ea",
+      "category": "sast",
+      "message": "Does not check for buffer overflows (CWE-120).",
+      "cve": "src/flawfinder/test.c:907b46be1c3ea7b38f90a4d1b0f43b7751cd8cbe38fae840930ff006b702157d:CWE-120",
+      "severity": "Low",
+      "solution": "Use sprintf_s, snprintf, or vsnprintf.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 21
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - sprintf",
+          "value": "sprintf"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ]
+    },
+    {
+      "id": "df1c8c0a8304950495bd0aa221fe62eea8d8d31201b090fc7f51f17f25da5bea",
+      "category": "sast",
+      "message": "Easily used incorrectly; doesn't always \\0-terminate or check for invalid pointers [MS-banned] (CWE-120).",
+      "cve": "src/flawfinder/test.c:9682400715884a097db027871153ad4c9a87de46d2df5f0b6b61b5254f358293:CWE-120",
+      "severity": "Low",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 57
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - strncpy",
+          "value": "strncpy"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ]
+    },
+    {
+      "id": "62afd3f59d87b8d14c89b11aea598373bd3a594c60ba938175e50335b8e54a44",
+      "category": "sast",
+      "message": "Easily used incorrectly; doesn't always \\0-terminate or check for invalid pointers [MS-banned] (CWE-120).",
+      "cve": "src/flawfinder/test.c:ad9eee3be6c5724de97daeac130321e24657d77c854ed5feca0f0432e37fef24:CWE-120",
+      "severity": "Low",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 58
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - _tcsncpy",
+          "value": "_tcsncpy"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ]
+    },
+    {
+      "id": "c1ecd2e2d5f5ef7537683f654c3b3219577a41e8c15a0ac1a07a2d231b620139",
+      "category": "sast",
+      "message": "Does not check for buffer overflows (CWE-120).",
+      "cve": "src/flawfinder/test.c:c65fbd60851f3c8ace22332805966606488c0d242c1823493c582e267609b1a7:CWE-120",
+      "severity": "Low",
+      "solution": "Use sprintf_s, snprintf, or vsnprintf.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 20
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - sprintf",
+          "value": "sprintf"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ]
+    },
+    {
+      "id": "fa8a2bc1a9fc29e6841a598b1516ca47969059bd245bacc4b7d77e48611bea08",
+      "category": "sast",
+      "message": "Does not check for buffer overflows when copying to destination [MS-banned] (CWE-120).",
+      "cve": "src/flawfinder/test.c:d64070fb93ff0bb797fb926f4dddc7212d42f77e288d5ceb0cd30ed2979fa28d:CWE-120",
+      "severity": "Low",
+      "solution": "Consider using snprintf, strcpy_s, or strlcpy (warning: strncpy easily misused).",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 18
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - strcpy",
+          "value": "strcpy"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ]
+    },
+    {
+      "id": "3ec4445dfb7d3f60d7d314a14340dbf4d2dd1ed3fb95ccc0e19ec76c0da511ee",
+      "category": "sast",
+      "message": "Requires maximum length in CHARACTERS, not bytes (CWE-120).",
+      "cve": "src/flawfinder/test.c:d6e60bc6c7fd9d0bab94f290a978ab7c88cc3538d51e3fadc6124b14293bdcc3:CWE-120",
+      "severity": "Low",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 70
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - MultiByteToWideChar",
+          "value": "MultiByteToWideChar"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ]
+    },
+    {
+      "id": "706cfadbf34ed2093997ed1b5bf2f9fc35220d3533e4d0f015499811dcaa7c3d",
+      "category": "sast",
+      "message": "Does not handle strings that are not \\0-terminated; if given one it may perform an over-read (it could cause a crash if unprotected) (CWE-126).",
+      "cve": "src/flawfinder/test.c:db7201c7df7f543ea76febb060bda167e414e71e3d18095fe1def69f8c47a4f6:CWE-126",
+      "severity": "Low",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 62
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - strlen",
+          "value": "strlen"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-126",
+          "value": "126",
+          "url": "https://cwe.mitre.org/data/definitions/126.html"
+        }
+      ]
+    },
+    {
+      "id": "4cc05d0ba90ec2e9114a354ef4171c30ed5e7b355d37b1b76d5ec2e78474b620",
+      "category": "sast",
+      "message": "It's unclear if the %s limit in the format string is small enough (CWE-120).",
+      "cve": "src/flawfinder/test.c:e24c4c801f10acfa93098b2bef58524efe4f88237f2dd8b58be9afa838616afe:CWE-120",
+      "severity": "Low",
+      "solution": "Check that the limit is sufficiently small, or use a different input function.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 28
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - scanf",
+          "value": "scanf"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        }
+      ]
+    },
+    {
+      "id": "1eecc2c1b682a5b6b6b228087f3547af364da8758d2be18e792960ebc491537d",
+      "category": "sast",
+      "message": "If format strings can be influenced by an attacker, they can be exploited (CWE-134).",
+      "cve": "src/flawfinder/test.c:0bba01b17ded34f0739458f5a2354bfbdc586d3db2499d5b7dcadfdfdef4bcd7:CWE-134",
+      "severity": "Info",
+      "solution": "Use a constant for the format specification.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 31
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - printf",
+          "value": "printf"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-134",
+          "value": "134",
+          "url": "https://cwe.mitre.org/data/definitions/134.html"
+        }
+      ]
+    },
+    {
+      "id": "f609fcc97094efb5e4de2e0fa68a72319f5490f08b450b42fdad89cd122775c3",
+      "category": "sast",
+      "message": "If format strings can be influenced by an attacker, they can be exploited (CWE-134).",
+      "cve": "src/flawfinder/test.c:10507250e915a1af03bd6f5bc9769b20b749534adb4e747d4e9c39e07fa654dc:CWE-134",
+      "severity": "Info",
+      "solution": "Use a constant for the format specification.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 10
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - printf",
+          "value": "printf"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-134",
+          "value": "134",
+          "url": "https://cwe.mitre.org/data/definitions/134.html"
+        }
+      ]
+    },
+    {
+      "id": "98ca2fbe3aa240f25be236a56e34c1a0c6ce227d7baf981fafd5d444def47fc5",
+      "category": "sast",
+      "message": "If format strings can be influenced by an attacker, they can be exploited (CWE-134).",
+      "cve": "src/flawfinder/test.c:11702bb3d0e0520fa604a3e3692694eb3c5877c4ba195efe0bb718506a786185:CWE-134",
+      "severity": "Info",
+      "solution": "Use a constant for the format specification.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 91
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - printf",
+          "value": "printf"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-134",
+          "value": "134",
+          "url": "https://cwe.mitre.org/data/definitions/134.html"
+        }
+      ]
+    },
+    {
+      "id": "1f6816e3758b9f3c82fbc80b4f770583b28bc215a8305d48d97b1c56bdbf13cf",
+      "category": "sast",
+      "message": "If format strings can be influenced by an attacker, they can be exploited (CWE-134).",
+      "cve": "src/flawfinder/test.c:13289bc996e1e52270c0f82552e305794e8e5dd6b856c86714fb9ea3f8aeb825:CWE-134",
+      "severity": "Info",
+      "solution": "Use a constant for the format specification.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 89
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - printf",
+          "value": "printf"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-134",
+          "value": "134",
+          "url": "https://cwe.mitre.org/data/definitions/134.html"
+        }
+      ]
+    },
+    {
+      "id": "b4bfdbc0ce9951f0e62b3290244ce0bd4c962b66dcb3eff8cfa03592590dda37",
+      "category": "sast",
+      "message": "If syslog's format strings can be influenced by an attacker, they can be exploited (CWE-134).",
+      "cve": "src/flawfinder/test.c:2673c9f27f7b1900937aa4e5c880d25eadf5a2270c4251e32a301e36e9617226:CWE-134",
+      "severity": "Info",
+      "solution": "Use a constant format string for syslog.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 38
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - syslog",
+          "value": "syslog"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-134",
+          "value": "134",
+          "url": "https://cwe.mitre.org/data/definitions/134.html"
+        }
+      ]
+    },
+    {
+      "id": "9d51d8c4d2e293fc801c34fcd5436315c83016b92ce92dabf75e5a3952909ec7",
+      "category": "sast",
+      "message": "If format strings can be influenced by an attacker, they can be exploited (CWE-134).",
+      "cve": "src/flawfinder/test.c:288e465904d29d6f36d2b01558fc210a42d8db88a21dce883fd16da6b294e69b:CWE-134",
+      "severity": "Info",
+      "solution": "Use a constant for the format specification.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 90
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - printf",
+          "value": "printf"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-134",
+          "value": "134",
+          "url": "https://cwe.mitre.org/data/definitions/134.html"
+        }
+      ]
+    },
+    {
+      "id": "918bfc6e72214ac545a128c761f48ce4fa230c6f75f4123aa938d183d411a081",
+      "category": "sast",
+      "message": "The scanf() family's %s operation, without a limit specification, permits buffer overflows (CWE-120, CWE-20).",
+      "cve": "src/flawfinder/test.c:2dd61d631c5b2e49b2150236dfbf8ac4b2af477b420e52abf623701f550a9dc6:CWE-120, CWE-20",
+      "severity": "Info",
+      "solution": "Specify a limit to %s, or use a different input function.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 26
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - scanf",
+          "value": "scanf"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-120",
+          "value": "120",
+          "url": "https://cwe.mitre.org/data/definitions/120.html"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-20",
+          "value": "20",
+          "url": "https://cwe.mitre.org/data/definitions/20.html"
+        }
+      ]
+    },
+    {
+      "id": "4db0c5ef807a25682869bb65a045cc04c64a34a474948037ac8a8d522d4f31b1",
+      "category": "sast",
+      "message": "If format strings can be influenced by an attacker, they can be exploited (CWE-134).",
+      "cve": "src/flawfinder/test.c:2fc00b21059341c70d68e2e2f96cd81dfeb68a4bf916a3eb03d9a739912cac0f:CWE-134",
+      "severity": "Info",
+      "solution": "Use a constant for the format specification.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 93
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - printf",
+          "value": "printf"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-134",
+          "value": "134",
+          "url": "https://cwe.mitre.org/data/definitions/134.html"
+        }
+      ]
+    },
+    {
+      "id": "e5827f8c9b05a156d04efc8339225b503830135011fd0cba04e412dd7e3b6094",
+      "category": "sast",
+      "message": "If format strings can be influenced by an attacker, they can be exploited (CWE-134).",
+      "cve": "src/flawfinder/test.c:3e9a674ae7153073ec6d2fcbaa7cfea9c081dfc4f534a816786a61c3e0d971f8:CWE-134",
+      "severity": "Info",
+      "solution": "Use a constant for the format specification.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 86
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - printf",
+          "value": "printf"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-134",
+          "value": "134",
+          "url": "https://cwe.mitre.org/data/definitions/134.html"
+        }
+      ]
+    },
+    {
+      "id": "d0066ec833d8a32956d0898b2f13f8dde5b9e3acb41780d09267cafa8ddccf75",
+      "category": "sast",
+      "message": "If format strings can be influenced by an attacker, they can be exploited (CWE-134).",
+      "cve": "src/flawfinder/test.c:446900f2d29c81e8eb41d0da27aa8da8b8a435203b5c1e5b3dc305e1fbb3db71:CWE-134",
+      "severity": "Info",
+      "solution": "Use a constant for the format specification.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 94
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - printf",
+          "value": "printf"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-134",
+          "value": "134",
+          "url": "https://cwe.mitre.org/data/definitions/134.html"
+        }
+      ]
+    },
+    {
+      "id": "7461a290a8b32f76b8cbc0118d7b4fd404d20bec0d90bce908cacfdc645e7dd3",
+      "category": "sast",
+      "message": "If format strings can be influenced by an attacker, they can be exploited (CWE-134).",
+      "cve": "src/flawfinder/test.c:526570c32a4a05093b28214ec9ccf0ec229a59d76f339facf26615501d4a1227:CWE-134",
+      "severity": "Info",
+      "solution": "Use a constant for the format specification.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 117
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - fprintf",
+          "value": "fprintf"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-134",
+          "value": "134",
+          "url": "https://cwe.mitre.org/data/definitions/134.html"
+        }
+      ]
+    },
+    {
+      "id": "f7f449df25078fb1f9ad56109950bb7811fd47f2984daa370b2c7d47c6c27877",
+      "category": "sast",
+      "message": "If format strings can be influenced by an attacker, they can be exploited (CWE-134).",
+      "cve": "src/flawfinder/test.c:5ae587569e58072240513a46bb63940e4bff3f5f92788447833b2e463e2386b4:CWE-134",
+      "severity": "Info",
+      "solution": "Use a constant for the format specification.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 92
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - printf",
+          "value": "printf"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-134",
+          "value": "134",
+          "url": "https://cwe.mitre.org/data/definitions/134.html"
+        }
+      ]
+    },
+    {
+      "id": "f377526e8ca4f7d5e8142d28dedfac2dd09849c6ba1735c09182b3b0e4331d9f",
+      "category": "sast",
+      "message": "If format strings can be influenced by an attacker, they can be exploited (CWE-134).",
+      "cve": "src/flawfinder/test.c:85ddfe1358f8f3ffbb19fa7037418ec75b9d85747fb3972bb5af048374cc0cef:CWE-134",
+      "severity": "Info",
+      "solution": "Use a constant for the format specification.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 85
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - printf",
+          "value": "printf"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-134",
+          "value": "134",
+          "url": "https://cwe.mitre.org/data/definitions/134.html"
+        }
+      ]
+    },
+    {
+      "id": "a74f66e8471a82918a0429dd73945ee2fe367421db6a1d6a29d24520ef7ff32f",
+      "category": "sast",
+      "message": "If format strings can be influenced by an attacker, they can be exploited (CWE-134).",
+      "cve": "src/flawfinder/test.c:87d424cb4b890197e1a7d6125ed8fe5c06a2492d2bdded5f3116bc98c0cb13e7:CWE-134",
+      "severity": "Info",
+      "solution": "Use a constant for the format specification.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 87
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - printf",
+          "value": "printf"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-134",
+          "value": "134",
+          "url": "https://cwe.mitre.org/data/definitions/134.html"
+        }
+      ]
+    },
+    {
+      "id": "9ef6c3082cc748ba9a4ee8bf5b38f10190f71dd1e1548b746cb3127ed13c1ce7",
+      "category": "sast",
+      "message": "If syslog's format strings can be influenced by an attacker, they can be exploited (CWE-134).",
+      "cve": "src/flawfinder/test.c:a000145563f8a2d043ac42bf956e2b2aa69ff4a132522f8f1663d330a91e149c:CWE-134",
+      "severity": "Info",
+      "solution": "Use a constant format string for syslog.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 37
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - syslog",
+          "value": "syslog"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-134",
+          "value": "134",
+          "url": "https://cwe.mitre.org/data/definitions/134.html"
+        }
+      ]
+    },
+    {
+      "id": "2d16113c9d8f6153483b171880db86d90630e9d1505fba569a997d8bd0166905",
+      "category": "sast",
+      "message": "If format strings can be influenced by an attacker, they can be exploited (CWE-134).",
+      "cve": "src/flawfinder/test.c:be5fc23882ef904bebfdd9f58a0f305b0f5dc40593bb89bb4622ff00c23383cd:CWE-134",
+      "severity": "Info",
+      "solution": "Use a constant for the format specification.",
+      "scanner": {
+        "id": "flawfinder",
+        "name": "Flawfinder"
+      },
+      "location": {
+        "file": "src/flawfinder/test.c",
+        "start_line": 88
+      },
+      "identifiers": [
+        {
+          "type": "flawfinder_func_name",
+          "name": "Flawfinder - printf",
+          "value": "printf"
+        },
+        {
+          "type": "cwe",
+          "name": "CWE-134",
+          "value": "134",
+          "url": "https://cwe.mitre.org/data/definitions/134.html"
+        }
+      ]
+    }
+  ],
+  "scan": {
+    "scanner": {
+      "id": "flawfinder",
+      "name": "Flawfinder",
+      "url": "https://www.dwheeler.com/flawfinder",
+      "vendor": {
+        "name": "GitLab"
+      },
+      "version": "2.0.19"
+    },
+    "type": "sast",
+    "start_time": "2021-10-23T06:45:19",
+    "end_time": "2021-10-23T06:45:20",
+    "status": "success"
+  }
+}

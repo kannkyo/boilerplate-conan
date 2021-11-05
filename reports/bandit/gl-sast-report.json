@@ -1,0 +1,71 @@
+{
+  "version": "14.0.0",
+  "vulnerabilities": [
+    {
+      "id": "127d3b90f6597df372f5000493ec3520bf6707c9d509287dc1e65aa879e04f51",
+      "category": "sast",
+      "message": "Chmod setting a permissive mask 0o755 on file (libcrypto.so.1.0.0).",
+      "cve": ".conan/.conan/data/openssl/1.1.1k/_/_/export/conanfile.py:aa88c959a0885d1d9788e16fb1d971f21b19bc64c36a09fb8c15265b36a6e1b1:B103",
+      "severity": "Medium",
+      "confidence": "High",
+      "scanner": {
+        "id": "bandit",
+        "name": "Bandit"
+      },
+      "location": {
+        "file": ".conan/.conan/data/openssl/1.1.1k/_/_/export/conanfile.py",
+        "start_line": 805,
+        "end_line": 805
+      },
+      "identifiers": [
+        {
+          "type": "bandit_test_id",
+          "name": "Bandit Test ID B103",
+          "value": "B103",
+          "url": "https://bandit.readthedocs.io/en/latest/plugins/b103_set_bad_file_permissions.html"
+        }
+      ]
+    },
+    {
+      "id": "9b700ea5cbba22ff03dc798c893dcd1efc561ce8088bf8628c9909ed5b8a678d",
+      "category": "sast",
+      "message": "Chmod setting a permissive mask 0o755 on file (libssl.so.1.0.0).",
+      "cve": ".conan/.conan/data/openssl/1.1.1k/_/_/export/conanfile.py:bd7c4926b88944102748eabba607124cf34d76e9a4597e41bb716e043e03928e:B103",
+      "severity": "Medium",
+      "confidence": "High",
+      "scanner": {
+        "id": "bandit",
+        "name": "Bandit"
+      },
+      "location": {
+        "file": ".conan/.conan/data/openssl/1.1.1k/_/_/export/conanfile.py",
+        "start_line": 804,
+        "end_line": 804
+      },
+      "identifiers": [
+        {
+          "type": "bandit_test_id",
+          "name": "Bandit Test ID B103",
+          "value": "B103",
+          "url": "https://bandit.readthedocs.io/en/latest/plugins/b103_set_bad_file_permissions.html"
+        }
+      ]
+    }
+  ],
+  "remediations": [],
+  "scan": {
+    "scanner": {
+      "id": "bandit",
+      "name": "Bandit",
+      "url": "https://github.com/PyCQA/bandit",
+      "vendor": {
+        "name": "GitLab"
+      },
+      "version": "1.7.0"
+    },
+    "type": "sast",
+    "start_time": "2021-10-23T06:45:18",
+    "end_time": "2021-10-23T06:45:20",
+    "status": "success"
+  }
+}
