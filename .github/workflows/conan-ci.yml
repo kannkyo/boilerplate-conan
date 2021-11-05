@@ -36,6 +36,7 @@ jobs:
           REFERENCE=$PACKAGE_NAME/$PACKAGE_VERSION@$USER_CHANNEL
       - name: build
         run: |
+          . .venv/bin/activate
           conan remote add gitlab $URL --force
           conan remove $REFERENCE --remote=gitlab --force
           bash ./bin/clean.sh
@@ -59,6 +60,7 @@ jobs:
       - name: fuzzing
         shell: bash
         run: |
+          . .venv/bin/activate
           bash ./bin/build.sh
           exit 1
 
