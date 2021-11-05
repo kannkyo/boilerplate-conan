@@ -13,10 +13,10 @@ env:
   CI_JOB_TOKEN: DUMMY
   # for gitlab compatibility
   CHANNEL: stable
-  URL: ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/conan
-  CONAN_USER_HOME: ${CI_PROJECT_DIR}/.conan/
+  URL: $CI_API_V4_URL/projects/$CI_PROJECT_ID/packages/conan
+  CONAN_USER_HOME: $CI_PROJECT_DIR/.conan/
   CONAN_LOGIN_USERNAME: ci_user
-  CONAN_PASSWORD: ${CI_JOB_TOKEN}
+  CONAN_PASSWORD: $CI_JOB_TOKEN
   SAST_FLAWFINDER_LEVEL: 0
 
 jobs:
@@ -27,13 +27,13 @@ jobs:
     steps:
       - name: prepare build
         run: |
-          USER_CHANNEL=${CI_PROJECT_PATH//\//+}/${CHANNEL}
+          USER_CHANNEL=$CI_PROJECT_PATH//\//+/$CHANNEL
           source ./bin/env.sh
-          REFERENCE=${PACKAGE_NAME}/${PACKAGE_VERSION}@${USER_CHANNEL}
+          REFERENCE=$PACKAGE_NAME/$PACKAGE_VERSION@$USER_CHANNEL
       - name: build
         run: |
-          conan remote add gitlab ${URL} --force
-          conan remove ${REFERENCE} --remote=gitlab --force
+          conan remote add gitlab $URL --force
+          conan remove $REFERENCE --remote=gitlab --force
           bash ./bin/clean.sh
 
   fuzz:
@@ -58,11 +58,11 @@ jobs:
 #     steps:
 #       - name: prepare packaging
 #         run: |
-#           USER_CHANNEL=${CI_PROJECT_PATH//\//+}/${CHANNEL}
+#           USER_CHANNEL=$CI_PROJECT_PATH//\//+/$CHANNEL
 #           source ./bin/env.sh
-#           REFERENCE=${PACKAGE_NAME}/${PACKAGE_VERSION}@${USER_CHANNEL}
-#           echo upload ${REFERENCE} to ${URL}
+#           REFERENCE=$PACKAGE_NAME/$PACKAGE_VERSION@$USER_CHANNEL
+#           echo upload $REFERENCE to $URL
 #       - name: packaging
 #         run: |
-#           bash ./bin/package.sh ${USER_CHANNEL}
-#           conan upload ${REFERENCE} --all --remote=gitlab --confirm --force
+#           bash ./bin/package.sh $USER_CHANNEL
+#           conan upload $REFERENCE --all --remote=gitlab --confirm --force
