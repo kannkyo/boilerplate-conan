@@ -45,7 +45,7 @@ jobs:
         run: |
           . .venv/bin/activate
           export CONAN_USER_HOME=${GITHUB_WORKSPACE}/.conan/
-          ./bin/build.sh
+          ./bin/build.sh -t Release
 
   fuzz:
     runs-on: ubuntu-latest
@@ -84,7 +84,7 @@ jobs:
         run: |
           . .venv/bin/activate
           export CONAN_USER_HOME=${GITHUB_WORKSPACE}/.conan/
-          ./bin/build.sh
+          ./bin/build.sh -t Debug
           exit 1
 
 #   deploy:

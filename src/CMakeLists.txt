@@ -12,6 +12,11 @@ foreach(_LIB ${CONAN_LIBS_DEBUG})
   set(CMAKE_CXX_COMPILER afl-g++)
 endforeach()
 
+foreach(_LIB ${CONAN_LIBS_RELEASE})
+  set(CMAKE_C_COMPILER gcc)
+  set(CMAKE_CXX_COMPILER g++)
+endforeach()
+
 conan_basic_setup()
 
 add_library(sample sample.cpp)
