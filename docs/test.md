@@ -45,7 +45,7 @@ Elapsed time =    0.000 seconds
 /mnt/home/kannkyo/git/github/kannkyo/boilerplate-conan
 ```
 
-上記のコマンドの流れは以下のとおり。
+上記のコマンドの流れは以下のとおりです。
 
 1. テスト用のスクリプトを実行します。
 2. 依存するパッケージを自動的にインストールするコマンドが実行されます。

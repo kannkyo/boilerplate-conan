@@ -2,7 +2,7 @@
 
 ## ./bin/test.sh
 
-テストコマンドは以下のように使う。
+テストコマンドは以下のように使います。
 
 ```bash
 $ ./bin/test.sh 
@@ -24,7 +24,7 @@ $ ./bin/test.sh
 ++ PACKAGE_NAME=boilerplate-conan
 + mkdir -p test
 + pushd test
-/mnt/home/kannkyo/git/github/kannkyo/boilerplate-conan/test /mnt/home/kannkyo/git/github/kannkyo/boilerplate-conan
+./boilerplate-conan/test ./boilerplate-conan
 + conan test . boilerplate-conan/0.1.0@user/testing
 Configuration:
 [settings]
@@ -64,15 +64,15 @@ Packages
 
 Installing (downloading, building) binaries...
 bzip2/1.0.8: Already installed!
-bzip2/1.0.8: Appending PATH environment variable: /home/kannkyo/.conan/data/bzip2/1.0.8/_/_/package/da606cf731e334010b0bf6e85a2a6f891b9f36b0/bin
+bzip2/1.0.8: Appending PATH environment variable: ~/.conan/data/bzip2/1.0.8/_/_/package/da606cf731e334010b0bf6e85a2a6f891b9f36b0/bin
 cunit/2.1.3: Already installed!
 expat/2.4.1: Already installed!
 openssl/1.1.1k: Already installed!
 sqlite3/3.36.0: Already installed!
-sqlite3/3.36.0: Appending PATH env var with : /home/kannkyo/.conan/data/sqlite3/3.36.0/_/_/package/c0cc1a2703aaeb2777d683089def26db57cf15e6/bin
+sqlite3/3.36.0: Appending PATH env var with : ~/.conan/data/sqlite3/3.36.0/_/_/package/c0cc1a2703aaeb2777d683089def26db57cf15e6/bin
 zlib/1.2.11: Already installed!
 pcre/8.45: Already installed!
-pcre/8.45: Appending PATH environment variable: /home/kannkyo/.conan/data/pcre/8.45/_/_/package/87087120c448298530c012e627c1a0b8f062586d/bin
+pcre/8.45: Appending PATH environment variable: ~/.conan/data/pcre/8.45/_/_/package/87087120c448298530c012e627c1a0b8f062586d/bin
 poco/1.9.4: Already installed!
 boilerplate-conan/0.1.0@user/testing: Already installed!
 boilerplate-conan/0.1.0@user/testing (test package): Generator txt created conanbuildinfo.txt
@@ -80,7 +80,7 @@ boilerplate-conan/0.1.0@user/testing (test package): Generator cmake created con
 boilerplate-conan/0.1.0@user/testing (test package): Aggregating env generators
 boilerplate-conan/0.1.0@user/testing (test package): Generated conaninfo.txt
 boilerplate-conan/0.1.0@user/testing (test package): Generated graphinfo
-Using lockfile: '/mnt/home/kannkyo/git/github/kannkyo/boilerplate-conan/test/build/7e3f3c9f8b0319ca5c01315759aeda2f877da74f/conan.lock'
+Using lockfile: './boilerplate-conan/test/build/7e3f3c9f8b0319ca5c01315759aeda2f877da74f/conan.lock'
 Using cached profile from lockfile
 boilerplate-conan/0.1.0@user/testing (test package): Calling build()
 -- The CXX compiler identification is GNU 9.3.0
@@ -113,7 +113,7 @@ CMake Warning:
     CMAKE_INSTALL_SBINDIR
 
 
--- Build files have been written to: /mnt/home/kannkyo/git/github/kannkyo/boilerplate-conan/test/build/7e3f3c9f8b0319ca5c01315759aeda2f877da74f
+-- Build files have been written to: ./boilerplate-conan/test/build/7e3f3c9f8b0319ca5c01315759aeda2f877da74f
 Scanning dependencies of target example
 [ 50%] Building CXX object CMakeFiles/example.dir/example.cpp.o
 [100%] Linking CXX executable bin/example
@@ -138,12 +138,12 @@ Run Summary:    Type  Total    Ran Passed Failed Inactive
 
 Elapsed time =    0.000 seconds
 + popd
-/mnt/home/kannkyo/git/github/kannkyo/boilerplate-conan
+./boilerplate-conan
 ```
 
 ## ./bin/package.sh
 
-パッケージ生成コマンドは以下のように使う。
+パッケージ生成コマンドは以下のように使います。
 
 ```bash
 $ ./bin/package.sh 
@@ -165,7 +165,7 @@ $ ./bin/package.sh
 ++ PACKAGE_NAME=boilerplate-conan
 + mkdir -p build
 + pushd build
-/mnt/home/kannkyo/git/github/kannkyo/boilerplate-conan/build /mnt/home/kannkyo/git/github/kannkyo/boilerplate-conan
+./boilerplate-conan/build ./boilerplate-conan
 + conan install .. --build=missing --generator cmake_multi --settings build_type=Release
 Configuration:
 [settings]
@@ -201,14 +201,14 @@ Packages
 
 Installing (downloading, building) binaries...
 bzip2/1.0.8: Already installed!
-bzip2/1.0.8: Appending PATH environment variable: /home/kannkyo/.conan/data/bzip2/1.0.8/_/_/package/da606cf731e334010b0bf6e85a2a6f891b9f36b0/bin
+bzip2/1.0.8: Appending PATH environment variable: ~/.conan/data/bzip2/1.0.8/_/_/package/da606cf731e334010b0bf6e85a2a6f891b9f36b0/bin
 expat/2.4.1: Already installed!
 openssl/1.1.1k: Already installed!
 sqlite3/3.36.0: Already installed!
-sqlite3/3.36.0: Appending PATH env var with : /home/kannkyo/.conan/data/sqlite3/3.36.0/_/_/package/c0cc1a2703aaeb2777d683089def26db57cf15e6/bin
+sqlite3/3.36.0: Appending PATH env var with : ~/.conan/data/sqlite3/3.36.0/_/_/package/c0cc1a2703aaeb2777d683089def26db57cf15e6/bin
 zlib/1.2.11: Already installed!
 pcre/8.45: Already installed!
-pcre/8.45: Appending PATH environment variable: /home/kannkyo/.conan/data/pcre/8.45/_/_/package/87087120c448298530c012e627c1a0b8f062586d/bin
+pcre/8.45: Appending PATH environment variable: ~/.conan/data/pcre/8.45/_/_/package/87087120c448298530c012e627c1a0b8f062586d/bin
 poco/1.9.4: Already installed!
 conanfile.py (boilerplate-conan/0.1.0): Generator txt created conanbuildinfo.txt
 conanfile.py (boilerplate-conan/0.1.0): Generator cmake_multi created conanbuildinfo_release.cmake
@@ -263,18 +263,18 @@ Packages
 
 Installing (downloading, building) binaries...
 bzip2/1.0.8: Already installed!
-bzip2/1.0.8: Appending PATH environment variable: /home/kannkyo/.conan/data/bzip2/1.0.8/_/_/package/da606cf731e334010b0bf6e85a2a6f891b9f36b0/bin
+bzip2/1.0.8: Appending PATH environment variable: ~/.conan/data/bzip2/1.0.8/_/_/package/da606cf731e334010b0bf6e85a2a6f891b9f36b0/bin
 cunit/2.1.3: Already installed!
 expat/2.4.1: Already installed!
 openssl/1.1.1k: Already installed!
 sqlite3/3.36.0: Already installed!
-sqlite3/3.36.0: Appending PATH env var with : /home/kannkyo/.conan/data/sqlite3/3.36.0/_/_/package/c0cc1a2703aaeb2777d683089def26db57cf15e6/bin
+sqlite3/3.36.0: Appending PATH env var with : ~/.conan/data/sqlite3/3.36.0/_/_/package/c0cc1a2703aaeb2777d683089def26db57cf15e6/bin
 zlib/1.2.11: Already installed!
 pcre/8.45: Already installed!
-pcre/8.45: Appending PATH environment variable: /home/kannkyo/.conan/data/pcre/8.45/_/_/package/87087120c448298530c012e627c1a0b8f062586d/bin
+pcre/8.45: Appending PATH environment variable: ~/.conan/data/pcre/8.45/_/_/package/87087120c448298530c012e627c1a0b8f062586d/bin
 poco/1.9.4: Already installed!
 boilerplate-conan/0.1.0@user/testing: Copying sources to build folder
-boilerplate-conan/0.1.0@user/testing: Building your package in /home/kannkyo/.conan/data/boilerplate-conan/0.1.0/user/testing/build/f6edb6b7c9d43577d91bb67d1c096d7ef852947e
+boilerplate-conan/0.1.0@user/testing: Building your package in ~/.conan/data/boilerplate-conan/0.1.0/user/testing/build/f6edb6b7c9d43577d91bb67d1c096d7ef852947e
 boilerplate-conan/0.1.0@user/testing: Generator cmake created conanbuildinfo.cmake
 boilerplate-conan/0.1.0@user/testing: Aggregating env generators
 boilerplate-conan/0.1.0@user/testing: Calling build()
@@ -310,7 +310,7 @@ CMake Warning:
     CMAKE_INSTALL_SBINDIR
 
 
--- Build files have been written to: /home/kannkyo/.conan/data/boilerplate-conan/0.1.0/user/testing/build/f6edb6b7c9d43577d91bb67d1c096d7ef852947e
+-- Build files have been written to: ~/.conan/data/boilerplate-conan/0.1.0/user/testing/build/f6edb6b7c9d43577d91bb67d1c096d7ef852947e
 Scanning dependencies of target md5
 Scanning dependencies of target sample
 [ 25%] Building CXX object CMakeFiles/md5.dir/md5.cpp.o
@@ -320,11 +320,11 @@ Scanning dependencies of target sample
 [100%] Built target sample
 [100%] Built target md5
 boilerplate-conan/0.1.0@user/testing: Package 'f6edb6b7c9d43577d91bb67d1c096d7ef852947e' built
-boilerplate-conan/0.1.0@user/testing: Build folder /home/kannkyo/.conan/data/boilerplate-conan/0.1.0/user/testing/build/f6edb6b7c9d43577d91bb67d1c096d7ef852947e
+boilerplate-conan/0.1.0@user/testing: Build folder ~/.conan/data/boilerplate-conan/0.1.0/user/testing/build/f6edb6b7c9d43577d91bb67d1c096d7ef852947e
 boilerplate-conan/0.1.0@user/testing: Generated conaninfo.txt
 boilerplate-conan/0.1.0@user/testing: Generated conanbuildinfo.txt
 boilerplate-conan/0.1.0@user/testing: Generating the package
-boilerplate-conan/0.1.0@user/testing: Package folder /home/kannkyo/.conan/data/boilerplate-conan/0.1.0/user/testing/package/f6edb6b7c9d43577d91bb67d1c096d7ef852947e
+boilerplate-conan/0.1.0@user/testing: Package folder ~/.conan/data/boilerplate-conan/0.1.0/user/testing/package/f6edb6b7c9d43577d91bb67d1c096d7ef852947e
 boilerplate-conan/0.1.0@user/testing: Calling package()
 boilerplate-conan/0.1.0@user/testing package(): Packaged 2 '.a' files: libsample.a, libmd5.a
 boilerplate-conan/0.1.0@user/testing package(): Packaged 2 '.h' files: md5.h, sample.h
@@ -335,7 +335,7 @@ boilerplate-conan/0.1.0@user/testing (test package): Generator cmake created con
 boilerplate-conan/0.1.0@user/testing (test package): Aggregating env generators
 boilerplate-conan/0.1.0@user/testing (test package): Generated conaninfo.txt
 boilerplate-conan/0.1.0@user/testing (test package): Generated graphinfo
-Using lockfile: '/mnt/home/kannkyo/git/github/kannkyo/boilerplate-conan/test/build/7e3f3c9f8b0319ca5c01315759aeda2f877da74f/conan.lock'
+Using lockfile: './boilerplate-conan/test/build/7e3f3c9f8b0319ca5c01315759aeda2f877da74f/conan.lock'
 Using cached profile from lockfile
 boilerplate-conan/0.1.0@user/testing (test package): Calling build()
 -- The CXX compiler identification is GNU 9.3.0
@@ -368,7 +368,7 @@ CMake Warning:
     CMAKE_INSTALL_SBINDIR
 
 
--- Build files have been written to: /mnt/home/kannkyo/git/github/kannkyo/boilerplate-conan/test/build/7e3f3c9f8b0319ca5c01315759aeda2f877da74f
+-- Build files have been written to: ./boilerplate-conan/test/build/7e3f3c9f8b0319ca5c01315759aeda2f877da74f
 Scanning dependencies of target example
 [ 50%] Building CXX object CMakeFiles/example.dir/example.cpp.o
 [100%] Linking CXX executable bin/example
@@ -393,18 +393,18 @@ Run Summary:    Type  Total    Ran Passed Failed Inactive
 
 Elapsed time =    0.000 seconds
 + popd
-/mnt/home/kannkyo/git/github/kannkyo/boilerplate-conan
+./boilerplate-conan
 ```
 
 ## ./bin/build.sh
 
-ビルドコマンドは以下のように使う。
+ビルドコマンドは以下のように使います。
 
 ```bash
-$ ./bin/build.sh 
+$ ./bin/build.sh -t Debug
 + mkdir -p build
 + pushd build
-/mnt/home/kannkyo/git/github/kannkyo/boilerplate-conan/build /mnt/home/kannkyo/git/github/kannkyo/boilerplate-conan
+./boilerplate-conan/build ./boilerplate-conan
 + conan install .. --build=missing --generator cmake_multi --settings build_type=Debug
 Configuration:
 [settings]
@@ -440,14 +440,14 @@ Packages
 
 Installing (downloading, building) binaries...
 bzip2/1.0.8: Already installed!
-bzip2/1.0.8: Appending PATH environment variable: /home/kannkyo/.conan/data/bzip2/1.0.8/_/_/package/1d984b241c5c01f748cafe0b37dc9567ed236fef/bin
+bzip2/1.0.8: Appending PATH environment variable: ~/.conan/data/bzip2/1.0.8/_/_/package/1d984b241c5c01f748cafe0b37dc9567ed236fef/bin
 expat/2.4.1: Already installed!
 openssl/1.1.1k: Already installed!
 sqlite3/3.36.0: Already installed!
-sqlite3/3.36.0: Appending PATH env var with : /home/kannkyo/.conan/data/sqlite3/3.36.0/_/_/package/305e8b0d0ecb25e2a2f8cc5b94cb273d8478ca1e/bin
+sqlite3/3.36.0: Appending PATH env var with : ~/.conan/data/sqlite3/3.36.0/_/_/package/305e8b0d0ecb25e2a2f8cc5b94cb273d8478ca1e/bin
 zlib/1.2.11: Already installed!
 pcre/8.45: Already installed!
-pcre/8.45: Appending PATH environment variable: /home/kannkyo/.conan/data/pcre/8.45/_/_/package/25c45d0ee1909d2d499509931e4d76ad043ea44f/bin
+pcre/8.45: Appending PATH environment variable: ~/.conan/data/pcre/8.45/_/_/package/25c45d0ee1909d2d499509931e4d76ad043ea44f/bin
 poco/1.9.4: Already installed!
 conanfile.py (boilerplate-conan/0.1.0): Generator cmake_multi created conanbuildinfo_debug.cmake
 conanfile.py (boilerplate-conan/0.1.0): Generator cmake_multi created conanbuildinfo_multi.cmake
@@ -457,7 +457,7 @@ conanfile.py (boilerplate-conan/0.1.0): Aggregating env generators
 conanfile.py (boilerplate-conan/0.1.0): Generated conaninfo.txt
 conanfile.py (boilerplate-conan/0.1.0): Generated graphinfo
 + conan build ..
-Using lockfile: '/mnt/home/kannkyo/git/github/kannkyo/boilerplate-conan/build/conan.lock'
+Using lockfile: './boilerplate-conan/build/conan.lock'
 Using cached profile from lockfile
 conanfile.py (boilerplate-conan/0.1.0): Calling build()
 -- The CXX compiler identification is GNU 9.3.0
@@ -469,29 +469,29 @@ conanfile.py (boilerplate-conan/0.1.0): Calling build()
 -- Detecting CXX compile features - done
 -- Conan: called by CMake conan helper
 -- Conan: Using cmake global configuration
--- Library PocoZipd found /home/kannkyo/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoZipd.a
--- Library PocoNetSSLd found /home/kannkyo/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoNetSSLd.a
--- Library PocoMongoDBd found /home/kannkyo/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoMongoDBd.a
--- Library PocoUtild found /home/kannkyo/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoUtild.a
--- Library PocoDataSQLited found /home/kannkyo/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoDataSQLited.a
--- Library PocoRedisd found /home/kannkyo/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoRedisd.a
--- Library PocoEncodingsd found /home/kannkyo/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoEncodingsd.a
--- Library PocoXMLd found /home/kannkyo/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoXMLd.a
--- Library PocoJSONd found /home/kannkyo/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoJSONd.a
--- Library PocoDatad found /home/kannkyo/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoDatad.a
--- Library PocoCryptod found /home/kannkyo/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoCryptod.a
--- Library PocoNetd found /home/kannkyo/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoNetd.a
--- Library PocoFoundationd found /home/kannkyo/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoFoundationd.a
--- Library pcreposix found /home/kannkyo/.conan/data/pcre/8.45/_/_/package/25c45d0ee1909d2d499509931e4d76ad043ea44f/lib/libpcreposix.a
--- Library pcre found /home/kannkyo/.conan/data/pcre/8.45/_/_/package/25c45d0ee1909d2d499509931e4d76ad043ea44f/lib/libpcre.a
--- Library pcre16 found /home/kannkyo/.conan/data/pcre/8.45/_/_/package/25c45d0ee1909d2d499509931e4d76ad043ea44f/lib/libpcre16.a
--- Library pcre32 found /home/kannkyo/.conan/data/pcre/8.45/_/_/package/25c45d0ee1909d2d499509931e4d76ad043ea44f/lib/libpcre32.a
--- Library expat found /home/kannkyo/.conan/data/expat/2.4.1/_/_/package/224956cd189fb14f9771be519f4fd0815adc0e17/lib/libexpat.a
--- Library sqlite3 found /home/kannkyo/.conan/data/sqlite3/3.36.0/_/_/package/305e8b0d0ecb25e2a2f8cc5b94cb273d8478ca1e/lib/libsqlite3.a
--- Library ssl found /home/kannkyo/.conan/data/openssl/1.1.1k/_/_/package/23b828d52c0630e6b0b96d2945419feb7843c4f8/lib/libssl.a
--- Library crypto found /home/kannkyo/.conan/data/openssl/1.1.1k/_/_/package/23b828d52c0630e6b0b96d2945419feb7843c4f8/lib/libcrypto.a
--- Library bz2 found /home/kannkyo/.conan/data/bzip2/1.0.8/_/_/package/1d984b241c5c01f748cafe0b37dc9567ed236fef/lib/libbz2.a
--- Library z found /home/kannkyo/.conan/data/zlib/1.2.11/_/_/package/23b828d52c0630e6b0b96d2945419feb7843c4f8/lib/libz.a
+-- Library PocoZipd found ~/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoZipd.a
+-- Library PocoNetSSLd found ~/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoNetSSLd.a
+-- Library PocoMongoDBd found ~/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoMongoDBd.a
+-- Library PocoUtild found ~/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoUtild.a
+-- Library PocoDataSQLited found ~/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoDataSQLited.a
+-- Library PocoRedisd found ~/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoRedisd.a
+-- Library PocoEncodingsd found ~/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoEncodingsd.a
+-- Library PocoXMLd found ~/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoXMLd.a
+-- Library PocoJSONd found ~/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoJSONd.a
+-- Library PocoDatad found ~/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoDatad.a
+-- Library PocoCryptod found ~/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoCryptod.a
+-- Library PocoNetd found ~/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoNetd.a
+-- Library PocoFoundationd found ~/.conan/data/poco/1.9.4/_/_/package/19b2e5ddfcb2aa78f78b7be81b45b3871b742bb3/lib/libPocoFoundationd.a
+-- Library pcreposix found ~/.conan/data/pcre/8.45/_/_/package/25c45d0ee1909d2d499509931e4d76ad043ea44f/lib/libpcreposix.a
+-- Library pcre found ~/.conan/data/pcre/8.45/_/_/package/25c45d0ee1909d2d499509931e4d76ad043ea44f/lib/libpcre.a
+-- Library pcre16 found ~/.conan/data/pcre/8.45/_/_/package/25c45d0ee1909d2d499509931e4d76ad043ea44f/lib/libpcre16.a
+-- Library pcre32 found ~/.conan/data/pcre/8.45/_/_/package/25c45d0ee1909d2d499509931e4d76ad043ea44f/lib/libpcre32.a
+-- Library expat found ~/.conan/data/expat/2.4.1/_/_/package/224956cd189fb14f9771be519f4fd0815adc0e17/lib/libexpat.a
+-- Library sqlite3 found ~/.conan/data/sqlite3/3.36.0/_/_/package/305e8b0d0ecb25e2a2f8cc5b94cb273d8478ca1e/lib/libsqlite3.a
+-- Library ssl found ~/.conan/data/openssl/1.1.1k/_/_/package/23b828d52c0630e6b0b96d2945419feb7843c4f8/lib/libssl.a
+-- Library crypto found ~/.conan/data/openssl/1.1.1k/_/_/package/23b828d52c0630e6b0b96d2945419feb7843c4f8/lib/libcrypto.a
+-- Library bz2 found ~/.conan/data/bzip2/1.0.8/_/_/package/1d984b241c5c01f748cafe0b37dc9567ed236fef/lib/libbz2.a
+-- Library z found ~/.conan/data/zlib/1.2.11/_/_/package/23b828d52c0630e6b0b96d2945419feb7843c4f8/lib/libz.a
 -- Library m not found in package, might be system one
 -- Library dl not found in package, might be system one
 -- Library pthread not found in package, might be system one
@@ -518,7 +518,7 @@ CMake Warning:
     CMAKE_INSTALL_SBINDIR
 
 
--- Build files have been written to: /mnt/home/kannkyo/git/github/kannkyo/boilerplate-conan/build
+-- Build files have been written to: ./boilerplate-conan/build
 Scanning dependencies of target md5
 Scanning dependencies of target sample
 [ 25%] Building CXX object CMakeFiles/md5.dir/md5.cpp.o
@@ -536,12 +536,12 @@ afl-as++2.59d by Michal Zalewski
 [100%] Linking CXX static library libmd5.a
 [100%] Built target md5
 + popd
-/mnt/home/kannkyo/git/github/kannkyo/boilerplate-conan
+./boilerplate-conan
 ```
 
 ## ./bin/clean.sh
 
-クリーンコマンドは以下のように使う。
+クリーンコマンドは以下のように使います。
 
 ```bash
 $ ./bin/clean.sh 
