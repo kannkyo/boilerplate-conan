@@ -1,6 +1,5 @@
 image: conanio/gcc7
 variables:
-  CHANNEL: stable
   GITLAB_PACKAGE_URL: ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/conan
   CONAN_USER_HOME: ${CI_PROJECT_DIR}/.conan/
   CONAN_LOGIN_USERNAME: ci_user
@@ -23,12 +22,9 @@ stages:
 
 build:
   stage: build
-  before_script:
-    - . ./bin/env.ini
-    - REFERENCE=${PACKAGE_NAME}/${PACKAGE_VERSION}@${CI_PROJECT_PATH//\//+}/${CHANNEL}
   script:
     - conan remote add gitlab ${GITLAB_PACKAGE_URL} --force
-    #    - conan remove ${REFERENCE} --remote=gitlab --force
+    #    - conan remove ${PACKAGE_REFERENCE} --remote=gitlab --force
     - bash ./bin/clean.sh
     - bash ./bin/build.sh -t Release
 
@@ -50,10 +46,6 @@ create_package:
   stage: deploy
   dependencies:
     - build
-  before_script:
-    - . ./bin/env.ini
-    - REFERENCE=${PACKAGE_NAME}/${PACKAGE_VERSION}@${CI_PROJECT_PATH//\//+}/${CHANNEL}
-    - echo upload ${REFERENCE} to ${GITLAB_PACKAGE_URL}
   script:
     - bash ./bin/package.sh
-    - conan upload ${REFERENCE} --all --remote=gitlab --confirm --force
+    - bash ./bin/upload.sh

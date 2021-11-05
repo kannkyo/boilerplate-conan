@@ -5,9 +5,9 @@
 ```bash
 $ ./bin/test.sh # ・・・①
 ...
-boilerplate-conan/0.1.0@user/testing (test package): Installing package 
+boilerplate-conan/0.1.0@boilerplate-conan/stable (test package): Installing package 
 Requirements
-    boilerplate-conan/0.1.0@user/testing from local cache - Cache # ・・・②
+    boilerplate-conan/0.1.0@boilerplate-conan/stable from local cache - Cache # ・・・②
     bzip2/1.0.8 from 'conancenter' - Cache
     cunit/2.1.3 from 'conancenter' - Cache  # ・・・⑤
     expat/2.4.1 from 'conancenter' - Cache
@@ -22,7 +22,7 @@ Scanning dependencies of target example
 [ 50%] Building CXX object CMakeFiles/example.dir/example.cpp.o
 [100%] Linking CXX executable bin/example
 [100%] Built target example # ・・・⑥
-boilerplate-conan/0.1.0@user/testing (test package): Running test() # ・・・⑦
+boilerplate-conan/0.1.0@boilerplate-conan/stable (test package): Running test() # ・・・⑦
 sample/0.2: Hello World Release!
 c3fcd3d76192e4007dfb496cca67e13b
 

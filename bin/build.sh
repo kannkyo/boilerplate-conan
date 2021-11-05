@@ -2,6 +2,8 @@
 
 . ./bin/env.ini
 
+echo "build ${PACKAGE_REFERENCE}"
+
 FILE_NAME=`basename $0`
 
 while getopts t: OPT
@@ -17,9 +19,6 @@ if [ "$FLG_T" != "TRUE" ]; then
   echo "[ERROR] please set build_type = Debug or Release" 1>&2
   exit 1
 fi
-
-set -e
-set -x
 
 mkdir -p build
 pushd build
