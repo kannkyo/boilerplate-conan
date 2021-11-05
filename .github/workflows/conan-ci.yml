@@ -23,6 +23,10 @@ jobs:
     container:
       image: conanio/gcc7
     steps:
+      - name: prepare checkout
+        shell: bash
+        run: |
+          apt install -y git
       - name: checkout
         uses: actions/checkout@v2
       - name: prepare build
@@ -42,6 +46,10 @@ jobs:
     container:
       image: aflplusplus/aflplusplus
     steps:
+      - name: prepare checkout
+        shell: bash
+        run: |
+          apt install -y git
       - name: checkout
         uses: actions/checkout@v2
       - name: prepare fuzzing
