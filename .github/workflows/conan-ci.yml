@@ -1,0 +1,61 @@
+name: conan
+
+on:
+  push:
+
+env:
+  CHANNEL: stable
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
+        poetry-version: [1.1.11]
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: init conan
+        uses: ./.github/actions/init-conan
+        with:
+          python-version: ${{ matrix.python-version }}
+          poetry-version: ${{ matrix.poetry-version }}
+          cache-key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+      - name: prepare build
+        shell: bash
+        run: |
+          USER_CHANNEL=${GITHUB_REPOSITORY//\//+}/$CHANNEL
+          . ./bin/env.sh
+          REFERENCE=$PACKAGE_NAME/$PACKAGE_VERSION@$USER_CHANNEL
+      - name: build
+        run: |
+          . .venv/bin/activate
+          export CONAN_USER_HOME=${GITHUB_WORKSPACE}/.conan/
+          ./bin/build.sh -t Release
+
+  fuzz:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
+        poetry-version: [1.1.11]
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: install fuzzer
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y afl++
+      - name: init conan
+        uses: ./.github/actions/init-conan
+        with:
+          python-version: ${{ matrix.python-version }}
+          poetry-version: ${{ matrix.poetry-version }}
+          cache-key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+      - name: fuzzing
+        shell: bash
+        run: |
+          . .venv/bin/activate
+          export CONAN_USER_HOME=${GITHUB_WORKSPACE}/.conan/
+          ./bin/build.sh -t Debug
