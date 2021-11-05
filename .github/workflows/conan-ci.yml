@@ -39,9 +39,8 @@ jobs:
           . ./bin/env.sh
           REFERENCE=$PACKAGE_NAME/$PACKAGE_VERSION@$USER_CHANNEL
       - name: build
-        env:
-          CONAN_USER_HOME: ${GITHUB_WORKSPACE}/.conan/
         run: |
+          export CONAN_USER_HOME=${GITHUB_WORKSPACE}/.conan/
           mkdir -p build
           pushd build
             poetry run conan install .. --build=missing --generator cmake_multi --settings build_type=Debug
@@ -80,6 +79,7 @@ jobs:
       - name: fuzzing
         shell: bash
         run: |
+          export CONAN_USER_HOME=${GITHUB_WORKSPACE}/.conan/
           mkdir -p build
           pushd build
             poetry run conan install .. --build=missing --generator cmake_multi --settings build_type=Debug
