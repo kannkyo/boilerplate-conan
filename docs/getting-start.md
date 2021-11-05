@@ -6,7 +6,7 @@
 
 ```bash
 $ ./bin/test.sh 
-+ source ./bin/env.sh
++ . ./bin/env.ini
 ++ set -e
 ++ set -x
 ++ USER_CHANNEL=user/testing
@@ -147,7 +147,7 @@ Elapsed time =    0.000 seconds
 
 ```bash
 $ ./bin/package.sh 
-+ source ./bin/env.sh
++ . ./bin/env.ini
 ++ set -e
 ++ set -x
 ++ USER_CHANNEL=user/testing

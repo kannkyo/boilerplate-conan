@@ -3,6 +3,6 @@
 set -e
 set -x
 
-source ./bin/env.sh
+. ./bin/env.ini
 
 rm -rf build/

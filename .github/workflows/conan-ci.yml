@@ -26,7 +26,7 @@ jobs:
         shell: bash
         run: |
           USER_CHANNEL=${GITHUB_REPOSITORY//\//+}/$CHANNEL
-          . ./bin/env.sh
+          . ./bin/env.ini
           REFERENCE=$PACKAGE_NAME/$PACKAGE_VERSION@$USER_CHANNEL
       - name: build
         run: |

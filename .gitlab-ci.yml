@@ -24,7 +24,7 @@ stages:
 build:
   stage: build
   before_script:
-    - source ./bin/env.sh
+    - . ./bin/env.ini
     - REFERENCE=${PACKAGE_NAME}/${PACKAGE_VERSION}@${CI_PROJECT_PATH//\//+}/${CHANNEL}
   script:
     - conan remote add gitlab ${GITLAB_PACKAGE_URL} --force
@@ -51,7 +51,7 @@ create_package:
   dependencies:
     - build
   before_script:
-    - source ./bin/env.sh
+    - . ./bin/env.ini
     - REFERENCE=${PACKAGE_NAME}/${PACKAGE_VERSION}@${CI_PROJECT_PATH//\//+}/${CHANNEL}
     - echo upload ${REFERENCE} to ${GITLAB_PACKAGE_URL}
   script:

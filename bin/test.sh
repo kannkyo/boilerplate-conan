@@ -3,7 +3,7 @@
 set -e
 set -x
 
-source ./bin/env.sh
+. ./bin/env.ini
 
 mkdir -p test
 pushd test

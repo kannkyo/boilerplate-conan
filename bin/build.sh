@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./bin/env.sh
+. ./bin/env.ini
 
 FILE_NAME=`basename $0`
 
