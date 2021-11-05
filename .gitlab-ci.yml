@@ -1,7 +1,6 @@
 image: conanio/gcc7
 variables:
   GITLAB_PACKAGE_URL: ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/conan
-  CONAN_USER_HOME: ${CI_PROJECT_DIR}/.conan/
   CONAN_LOGIN_USERNAME: ci_user
   CONAN_PASSWORD: ${CI_JOB_TOKEN}
   SAST_FLAWFINDER_LEVEL: 0

@@ -31,7 +31,6 @@ jobs:
       - name: build
         run: |
           . .venv/bin/activate
-          export CONAN_USER_HOME=${GITHUB_WORKSPACE}/.conan/
           ./bin/build.sh -t Release
 
   fuzz:
@@ -57,5 +56,4 @@ jobs:
         shell: bash
         run: |
           . .venv/bin/activate
-          export CONAN_USER_HOME=${GITHUB_WORKSPACE}/.conan/
           ./bin/build.sh -t Debug
