@@ -20,13 +20,22 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
+        poetry-version: [1.1.11]
     steps:
       - name: checkout
         uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: abatilo/actions-poetry@v2.0.0
+        with:
+          poetry-version: ${{ matrix.poetry-version }}
       - name: install conan
         shell: bash
         run: |
-          pip install poetry --upgrade
           poetry install
       - name: prepare build
         shell: bash
@@ -36,15 +45,16 @@ jobs:
           REFERENCE=$PACKAGE_NAME/$PACKAGE_VERSION@$USER_CHANNEL
       - name: build
         run: |
-          . .venv/bin/activate
-          conan remote add gitlab $URL --force
-          conan remove $REFERENCE --remote=gitlab --force
+          poetry run conan remote add gitlab $URL --force
+          poetry run conan remove $REFERENCE --remote=gitlab --force
           bash ./bin/clean.sh
 
   fuzz:
     runs-on: ubuntu-latest
-    container:
-      image: aflplusplus/aflplusplus
+    strategy:
+      matrix:
+        python-version: [3.8]
+        poetry-version: [1.1.11]
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -52,16 +62,24 @@ jobs:
         run: |
           sudo apt-get update -y
           sudo apt-get install -y afl++
+      - uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: abatilo/actions-poetry@v2.0.0
+        with:
+          poetry-version: ${{ matrix.poetry-version }}
       - name: install conan
         shell: bash
         run: |
-          pip install poetry --upgrade
           poetry install
       - name: fuzzing
         shell: bash
         run: |
-          . .venv/bin/activate
-          bash ./bin/build.sh
+          mkdir -p build
+          pushd build
+            poetry run conan install .. --build=missing --generator cmake_multi --settings build_type=Debug
+            poetry run conan build ..
+          popd
           exit 1
 
 #   deploy:
