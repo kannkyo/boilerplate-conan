@@ -5,7 +5,7 @@ on:
 
 env:
   CHANNEL: stable
-  CONAN_USER_HOME: $GITHUB_WORKSPACE/.conan/
+  CONAN_USER_HOME: ${GITHUB_WORKSPACE}/.conan/
 
 jobs:
   build:
