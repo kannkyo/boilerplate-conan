@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ./bin/env.sh
+
 FILE_NAME=`basename $0`
 
 while getopts t: OPT
