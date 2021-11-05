@@ -4,18 +4,8 @@ on:
   push:
 
 env:
-  # for gitlab compatibility
-  CI_API_V4_URL: DUMMY
-  CI_PROJECT_PATH: kannkyo/boilerplate-conan
-  CI_PROJECT_ID: boilerplate-conan
-  CI_JOB_TOKEN: DUMMY
-  # for gitlab compatibility
   CHANNEL: stable
-  URL: $CI_API_V4_URL/projects/$CI_PROJECT_ID/packages/conan
-  CONAN_USER_HOME: $CI_PROJECT_DIR/.conan/
-  CONAN_LOGIN_USERNAME: ci_user
-  CONAN_PASSWORD: $CI_JOB_TOKEN
-  SAST_FLAWFINDER_LEVEL: 0
+  CONAN_USER_HOME: $GITHUB_WORKSPACE/.conan/
 
 jobs:
   build:
@@ -46,14 +36,16 @@ jobs:
       - name: prepare build
         shell: bash
         run: |
-          USER_CHANNEL=${CI_PROJECT_PATH//\//+}/$CHANNEL
+          USER_CHANNEL=${GITHUB_REPOSITORY//\//+}/$CHANNEL
           . ./bin/env.sh
           REFERENCE=$PACKAGE_NAME/$PACKAGE_VERSION@$USER_CHANNEL
       - name: build
         run: |
-          poetry run conan remote add gitlab $URL --force
-          poetry run conan remove $REFERENCE --remote=gitlab --force
-          bash ./bin/clean.sh
+          mkdir -p build
+          pushd build
+            poetry run conan install .. --build=missing --generator cmake_multi --settings build_type=Debug
+            poetry run conan build ..
+          popd
 
   fuzz:
     runs-on: ubuntu-latest
