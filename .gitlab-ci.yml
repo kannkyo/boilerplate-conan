@@ -24,9 +24,8 @@ stages:
 build:
   stage: build
   before_script:
-    - USER_CHANNEL=${CI_PROJECT_PATH//\//+}/${CHANNEL}
     - source ./bin/env.sh
-    - REFERENCE=${PACKAGE_NAME}/${PACKAGE_VERSION}@${USER_CHANNEL}
+    - REFERENCE=${PACKAGE_NAME}/${PACKAGE_VERSION}@${CI_PROJECT_PATH//\//+}/${CHANNEL}
   script:
     - conan remote add gitlab ${GITLAB_PACKAGE_URL} --force
     #    - conan remove ${REFERENCE} --remote=gitlab --force
@@ -52,9 +51,8 @@ create_package:
   dependencies:
     - build
   before_script:
-    - USER_CHANNEL=${CI_PROJECT_PATH//\//+}/${CHANNEL}
     - source ./bin/env.sh
-    - REFERENCE=${PACKAGE_NAME}/${PACKAGE_VERSION}@${USER_CHANNEL}
+    - REFERENCE=${PACKAGE_NAME}/${PACKAGE_VERSION}@${CI_PROJECT_PATH//\//+}/${CHANNEL}
     - echo upload ${REFERENCE} to ${GITLAB_PACKAGE_URL}
   script:
     - bash ./bin/package.sh
