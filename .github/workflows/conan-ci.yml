@@ -26,7 +26,7 @@ jobs:
       - name: install conan
         shell: bash
         run: |
-          pip3 install poetry --upgrade
+          pip install poetry --upgrade
           poetry install
       - name: prepare build
         shell: bash
@@ -45,17 +45,17 @@ jobs:
     container:
       image: aflplusplus/aflplusplus
     steps:
-      - name: prepare checkout
-        shell: bash
-        run: |
-          sudo apt-get install -y git
       - name: checkout
         uses: actions/checkout@v2
-      - name: prepare fuzzing
+      - name: install fuzzer
         run: |
-          apt update -y
-          apt install -y python3 python3-pip cmake gcc g++
-          pip install conan
+          sudo apt-get update -y
+          sudo apt-get install -y afl++
+      - name: install conan
+        shell: bash
+        run: |
+          pip install poetry --upgrade
+          poetry install
       - name: fuzzing
         shell: bash
         run: |
