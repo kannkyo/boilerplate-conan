@@ -26,7 +26,7 @@ jobs:
       - name: prepare build
         run: |
           USER_CHANNEL=$CI_PROJECT_PATH//\//+/$CHANNEL
-          source ./bin/env.sh
+          . ./bin/env.sh
           REFERENCE=$PACKAGE_NAME/$PACKAGE_VERSION@$USER_CHANNEL
       - name: build
         run: |
@@ -57,7 +57,7 @@ jobs:
 #       - name: prepare packaging
 #         run: |
 #           USER_CHANNEL=$CI_PROJECT_PATH//\//+/$CHANNEL
-#           source ./bin/env.sh
+#           . ./bin/env.sh
 #           REFERENCE=$PACKAGE_NAME/$PACKAGE_VERSION@$USER_CHANNEL
 #           echo upload $REFERENCE to $URL
 #       - name: packaging
