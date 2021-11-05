@@ -20,19 +20,18 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: conanio/gcc7
     steps:
-      - name: prepare checkout
-        shell: bash
-        run: |
-          sudo apt-get install -y git
       - name: checkout
         uses: actions/checkout@v2
+      - name: install conan
+        shell: bash
+        run: |
+          pip3 install poetry --upgrade
+          poetry install
       - name: prepare build
         shell: bash
         run: |
-          USER_CHANNEL=$CI_PROJECT_PATH//\//+/$CHANNEL
+          USER_CHANNEL=${CI_PROJECT_PATH//\//+}/$CHANNEL
           . ./bin/env.sh
           REFERENCE=$PACKAGE_NAME/$PACKAGE_VERSION@$USER_CHANNEL
       - name: build
