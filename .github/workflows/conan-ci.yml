@@ -16,8 +16,8 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-      - name: init environment
-        uses: ./.github/actions/init
+      - name: init conan
+        uses: ./.github/actions/init-conan
         with:
           python-version: ${{ matrix.python-version }}
           poetry-version: ${{ matrix.poetry-version }}
@@ -47,8 +47,8 @@ jobs:
         run: |
           sudo apt-get update -y
           sudo apt-get install -y afl++
-      - name: init environment
-        uses: ./.github/actions/init
+      - name: init conan
+        uses: ./.github/actions/init-conan
         with:
           python-version: ${{ matrix.python-version }}
           poetry-version: ${{ matrix.poetry-version }}
