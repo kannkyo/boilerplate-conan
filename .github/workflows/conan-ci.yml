@@ -1,0 +1,68 @@
+name: conan
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+env:
+  # for gitlab compatibility
+  CI_API_V4_URL: DUMMY
+  CI_PROJECT_PATH: kannkyo/boilerplate-conan
+  CI_PROJECT_ID: boilerplate-conan
+  CI_JOB_TOKEN: DUMMY
+  # for gitlab compatibility
+  CHANNEL: stable
+  URL: ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/conan
+  CONAN_USER_HOME: ${CI_PROJECT_DIR}/.conan/
+  CONAN_LOGIN_USERNAME: ci_user
+  CONAN_PASSWORD: ${CI_JOB_TOKEN}
+  SAST_FLAWFINDER_LEVEL: 0
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: conanio/gcc7
+    steps:
+      - name: prepare build
+        run: |
+          USER_CHANNEL=${CI_PROJECT_PATH//\//+}/${CHANNEL}
+          source ./bin/env.sh
+          REFERENCE=${PACKAGE_NAME}/${PACKAGE_VERSION}@${USER_CHANNEL}
+      - name: build
+        run: |
+          conan remote add gitlab ${URL} --force
+          conan remove ${REFERENCE} --remote=gitlab --force
+          bash ./bin/clean.sh
+
+  fuzz:
+    runs-on: ubuntu-latest
+    container:
+      image: aflplusplus/aflplusplus
+    steps:
+      - name: prepare fuzzing
+        run: |
+          apt update -y
+          apt install -y python3 python3-pip cmake gcc g++
+          pip install conan
+      - name: fuzzing
+        run: |
+          bash ./bin/build.sh
+          exit 1
+
+#   deploy:
+#     runs-on: ubuntu-latest
+#     container:
+#       image: conanio/gcc7
+#     steps:
+#       - name: prepare packaging
+#         run: |
+#           USER_CHANNEL=${CI_PROJECT_PATH//\//+}/${CHANNEL}
+#           source ./bin/env.sh
+#           REFERENCE=${PACKAGE_NAME}/${PACKAGE_VERSION}@${USER_CHANNEL}
+#           echo upload ${REFERENCE} to ${URL}
+#       - name: packaging
+#         run: |
+#           bash ./bin/package.sh ${USER_CHANNEL}
+#           conan upload ${REFERENCE} --all --remote=gitlab --confirm --force
