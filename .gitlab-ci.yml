@@ -1,6 +1,6 @@
 image: conanio/gcc7
 variables:
-  GITLAB_PACKAGE_URL: ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/conan
+  CONAN_REGISTORY_URL: ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/conan
   CONAN_LOGIN_USERNAME: ci_user
   CONAN_PASSWORD: ${CI_JOB_TOKEN}
   SAST_FLAWFINDER_LEVEL: 0
@@ -22,7 +22,7 @@ stages:
 build:
   stage: build
   script:
-    - conan remote add gitlab ${GITLAB_PACKAGE_URL} --force
+    # - conan remote add gitlab ${CONAN_REGISTORY_URL} --force
     #    - conan remove ${PACKAGE_REFERENCE} --remote=gitlab --force
     - bash ./bin/clean.sh
     - bash ./bin/build.sh -t Release
@@ -47,4 +47,4 @@ create_package:
     - build
   script:
     - bash ./bin/package.sh
-    - bash ./bin/upload.sh
+    - bash ./bin/upload.sh -t ${CONAN_REGISTORY_URL}
