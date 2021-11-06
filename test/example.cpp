@@ -1,3 +1,4 @@
+#include "CUnit/Automated.h"
 #include "CUnit/Basic.h"
 #include "md5.h"
 #include "sample.h"
@@ -40,6 +41,8 @@ int main() {
   }
 
   /* Run all tests using the CUnit Basic interface */
+  CU_automated_run_tests();
+  CU_list_tests_to_file();
   CU_basic_set_mode(CU_BRM_VERBOSE);
   CU_basic_run_tests();
   CU_cleanup_registry();
