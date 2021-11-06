@@ -31,7 +31,15 @@ jobs:
         run: |
           . .venv/bin/activate
           ./bin/build.sh -t Release
-
+      - name: package 
+        run: |
+          . .venv/bin/activate
+          ./bin/package.sh
+      - name: upload cunit-xml
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          name: cunit-xml
+          path: ./test/build/**/bin/*.xml
   fuzz:
     runs-on: ubuntu-latest
     strategy:
@@ -51,6 +59,11 @@ jobs:
           python-version: ${{ matrix.python-version }}
           poetry-version: ${{ matrix.poetry-version }}
           cache-key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+      - uses: actions/cache@v2
+        id: conan_cache_id
+        with:
+          path: .conan
+          key: conan-${{ runner.os }}-${{ hashFiles('**/conanfile.py') }}
       - name: fuzzing
         shell: bash
         run: |
