@@ -1,8 +1,6 @@
-image: monster:5003/conanio/gcc7
+image: conanio/gcc7
 variables:
-  CHANNEL: stable
-  URL: ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/conan
-  CONAN_USER_HOME: ${CI_PROJECT_DIR}/.conan/
+  GITLAB_PACKAGE_URL: ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/conan
   CONAN_LOGIN_USERNAME: ci_user
   CONAN_PASSWORD: ${CI_JOB_TOKEN}
   SAST_FLAWFINDER_LEVEL: 0
@@ -23,14 +21,11 @@ stages:
 
 build:
   stage: build
-  before_script:
-    - USER_CHANNEL=${CI_PROJECT_PATH//\//+}/${CHANNEL}
-    - source ./bin/env.sh
-    - REFERENCE=${PACKAGE_NAME}/${PACKAGE_VERSION}@${USER_CHANNEL}
   script:
-    - conan remote add gitlab ${URL} --force
-    - conan remove ${REFERENCE} --remote=gitlab --force
+    - conan remote add gitlab ${GITLAB_PACKAGE_URL} --force
+    #    - conan remove ${PACKAGE_REFERENCE} --remote=gitlab --force
     - bash ./bin/clean.sh
+    - bash ./bin/build.sh -t Release
 
 fuzz:
   image: aflplusplus/aflplusplus
@@ -43,18 +38,13 @@ fuzz:
     - apt install -y python3 python3-pip cmake gcc g++
     - pip install conan
   script:
-    - bash ./bin/build.sh
+    - bash ./bin/build.sh -t Debug
     - exit 1
 
 create_package:
   stage: deploy
   dependencies:
     - build
-  before_script:
-    - USER_CHANNEL=${CI_PROJECT_PATH//\//+}/${CHANNEL}
-    - source ./bin/env.sh
-    - REFERENCE=${PACKAGE_NAME}/${PACKAGE_VERSION}@${USER_CHANNEL}
-    - echo upload ${REFERENCE} to ${URL}
   script:
-    - bash ./bin/package.sh ${USER_CHANNEL}
-    - conan upload ${REFERENCE} --all --remote=gitlab --confirm --force
+    - bash ./bin/package.sh
+    - bash ./bin/upload.sh

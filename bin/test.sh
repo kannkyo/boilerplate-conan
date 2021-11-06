@@ -1,9 +1,8 @@
 #!/bin/bash
 
-set -e
-set -x
+. ./bin/env.ini
 
-source ./bin/env.sh
+echo "test ${PACKAGE_REFERENCE}"
 
 mkdir -p test
 pushd test

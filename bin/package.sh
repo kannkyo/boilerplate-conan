@@ -1,13 +1,11 @@
 #!/bin/bash
 
-set -e
-set -x
+. ./bin/env.ini
 
-source ./bin/env.sh
+echo "package ${PACKAGE_REFERENCE}"
 
 mkdir -p build
 pushd build
-  # conan install .. --build=missing --generator cmake
   conan install .. --build=missing --generator cmake_multi --settings build_type=Release
   conan create .. ${USER_CHANNEL}
 popd

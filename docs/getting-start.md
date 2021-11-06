@@ -6,10 +6,10 @@
 
 ```bash
 $ ./bin/test.sh 
-+ source ./bin/env.sh
++ . ./bin/env.ini
 ++ set -e
 ++ set -x
-++ USER_CHANNEL=user/testing
+++ USER_CHANNEL=boilerplate-conan/stable
 +++ cat conanfile.py
 +++ grep -e version
 +++ sed 's/ //g'
@@ -25,7 +25,7 @@ $ ./bin/test.sh
 + mkdir -p test
 + pushd test
 ./boilerplate-conan/test ./boilerplate-conan
-+ conan test . boilerplate-conan/0.1.0@user/testing
++ conan test . boilerplate-conan/0.1.0@boilerplate-conan/stable
 Configuration:
 [settings]
 arch=x86_64
@@ -40,9 +40,9 @@ os_build=Linux
 [build_requires]
 [env]
 
-boilerplate-conan/0.1.0@user/testing (test package): Installing package
+boilerplate-conan/0.1.0@boilerplate-conan/stable (test package): Installing package
 Requirements
-    boilerplate-conan/0.1.0@user/testing from local cache - Cache
+    boilerplate-conan/0.1.0@boilerplate-conan/stable from local cache - Cache
     bzip2/1.0.8 from 'conancenter' - Cache
     cunit/2.1.3 from 'conancenter' - Cache
     expat/2.4.1 from 'conancenter' - Cache
@@ -52,7 +52,7 @@ Requirements
     sqlite3/3.36.0 from 'conancenter' - Cache
     zlib/1.2.11 from 'conancenter' - Cache
 Packages
-    boilerplate-conan/0.1.0@user/testing:f6edb6b7c9d43577d91bb67d1c096d7ef852947e - Cache
+    boilerplate-conan/0.1.0@boilerplate-conan/stable:f6edb6b7c9d43577d91bb67d1c096d7ef852947e - Cache
     bzip2/1.0.8:da606cf731e334010b0bf6e85a2a6f891b9f36b0 - Cache
     cunit/2.1.3:61ffa8b3f2bd70ee6bb1c458fa09615b0c3c1896 - Cache
     expat/2.4.1:c215f67ac7fc6a34d9d0fb90b0450016be569d86 - Cache
@@ -74,15 +74,15 @@ zlib/1.2.11: Already installed!
 pcre/8.45: Already installed!
 pcre/8.45: Appending PATH environment variable: ~/.conan/data/pcre/8.45/_/_/package/87087120c448298530c012e627c1a0b8f062586d/bin
 poco/1.9.4: Already installed!
-boilerplate-conan/0.1.0@user/testing: Already installed!
-boilerplate-conan/0.1.0@user/testing (test package): Generator txt created conanbuildinfo.txt
-boilerplate-conan/0.1.0@user/testing (test package): Generator cmake created conanbuildinfo.cmake
-boilerplate-conan/0.1.0@user/testing (test package): Aggregating env generators
-boilerplate-conan/0.1.0@user/testing (test package): Generated conaninfo.txt
-boilerplate-conan/0.1.0@user/testing (test package): Generated graphinfo
+boilerplate-conan/0.1.0@boilerplate-conan/stable: Already installed!
+boilerplate-conan/0.1.0@boilerplate-conan/stable (test package): Generator txt created conanbuildinfo.txt
+boilerplate-conan/0.1.0@boilerplate-conan/stable (test package): Generator cmake created conanbuildinfo.cmake
+boilerplate-conan/0.1.0@boilerplate-conan/stable (test package): Aggregating env generators
+boilerplate-conan/0.1.0@boilerplate-conan/stable (test package): Generated conaninfo.txt
+boilerplate-conan/0.1.0@boilerplate-conan/stable (test package): Generated graphinfo
 Using lockfile: './boilerplate-conan/test/build/7e3f3c9f8b0319ca5c01315759aeda2f877da74f/conan.lock'
 Using cached profile from lockfile
-boilerplate-conan/0.1.0@user/testing (test package): Calling build()
+boilerplate-conan/0.1.0@boilerplate-conan/stable (test package): Calling build()
 -- The CXX compiler identification is GNU 9.3.0
 -- Check for working CXX compiler: /usr/bin/c++
 -- Check for working CXX compiler: /usr/bin/c++ -- works
@@ -118,7 +118,7 @@ Scanning dependencies of target example
 [ 50%] Building CXX object CMakeFiles/example.dir/example.cpp.o
 [100%] Linking CXX executable bin/example
 [100%] Built target example
-boilerplate-conan/0.1.0@user/testing (test package): Running test()
+boilerplate-conan/0.1.0@boilerplate-conan/stable (test package): Running test()
 sample/0.2: Hello World Release!
 c3fcd3d76192e4007dfb496cca67e13b
 
@@ -147,10 +147,10 @@ Elapsed time =    0.000 seconds
 
 ```bash
 $ ./bin/package.sh 
-+ source ./bin/env.sh
++ . ./bin/env.ini
 ++ set -e
 ++ set -x
-++ USER_CHANNEL=user/testing
+++ USER_CHANNEL=boilerplate-conan/stable
 +++ grep -e version
 +++ sed 's/ //g'
 +++ sed s/version=//g
@@ -217,13 +217,13 @@ conanfile.py (boilerplate-conan/0.1.0): Generator cmake created conanbuildinfo.c
 conanfile.py (boilerplate-conan/0.1.0): Aggregating env generators
 conanfile.py (boilerplate-conan/0.1.0): Generated conaninfo.txt
 conanfile.py (boilerplate-conan/0.1.0): Generated graphinfo
-+ conan create .. user/testing
++ conan create .. boilerplate-conan/stable
 Exporting package recipe
-boilerplate-conan/0.1.0@user/testing exports_sources: Copied 3 '.cpp' files: main.cpp, md5.cpp, sample.cpp
-boilerplate-conan/0.1.0@user/testing exports_sources: Copied 1 '.txt' file: CMakeLists.txt
-boilerplate-conan/0.1.0@user/testing exports_sources: Copied 2 '.h' files: sample.h, md5.h
-boilerplate-conan/0.1.0@user/testing: The stored package has not changed
-boilerplate-conan/0.1.0@user/testing: Exported revision: d28290f5d0c961b238813e14fdfa28a2
+boilerplate-conan/0.1.0@boilerplate-conan/stable exports_sources: Copied 3 '.cpp' files: main.cpp, md5.cpp, sample.cpp
+boilerplate-conan/0.1.0@boilerplate-conan/stable exports_sources: Copied 1 '.txt' file: CMakeLists.txt
+boilerplate-conan/0.1.0@boilerplate-conan/stable exports_sources: Copied 2 '.h' files: sample.h, md5.h
+boilerplate-conan/0.1.0@boilerplate-conan/stable: The stored package has not changed
+boilerplate-conan/0.1.0@boilerplate-conan/stable: Exported revision: d28290f5d0c961b238813e14fdfa28a2
 Configuration:
 [settings]
 arch=x86_64
@@ -238,10 +238,10 @@ os_build=Linux
 [build_requires]
 [env]
 
-boilerplate-conan/0.1.0@user/testing: Forced build from source
-boilerplate-conan/0.1.0@user/testing (test package): Installing package
+boilerplate-conan/0.1.0@boilerplate-conan/stable: Forced build from source
+boilerplate-conan/0.1.0@boilerplate-conan/stable (test package): Installing package
 Requirements
-    boilerplate-conan/0.1.0@user/testing from local cache - Cache
+    boilerplate-conan/0.1.0@boilerplate-conan/stable from local cache - Cache
     bzip2/1.0.8 from 'conancenter' - Cache
     cunit/2.1.3 from 'conancenter' - Cache
     expat/2.4.1 from 'conancenter' - Cache
@@ -251,7 +251,7 @@ Requirements
     sqlite3/3.36.0 from 'conancenter' - Cache
     zlib/1.2.11 from 'conancenter' - Cache
 Packages
-    boilerplate-conan/0.1.0@user/testing:f6edb6b7c9d43577d91bb67d1c096d7ef852947e - Build
+    boilerplate-conan/0.1.0@boilerplate-conan/stable:f6edb6b7c9d43577d91bb67d1c096d7ef852947e - Build
     bzip2/1.0.8:da606cf731e334010b0bf6e85a2a6f891b9f36b0 - Cache
     cunit/2.1.3:61ffa8b3f2bd70ee6bb1c458fa09615b0c3c1896 - Cache
     expat/2.4.1:c215f67ac7fc6a34d9d0fb90b0450016be569d86 - Cache
@@ -273,11 +273,11 @@ zlib/1.2.11: Already installed!
 pcre/8.45: Already installed!
 pcre/8.45: Appending PATH environment variable: ~/.conan/data/pcre/8.45/_/_/package/87087120c448298530c012e627c1a0b8f062586d/bin
 poco/1.9.4: Already installed!
-boilerplate-conan/0.1.0@user/testing: Copying sources to build folder
-boilerplate-conan/0.1.0@user/testing: Building your package in ~/.conan/data/boilerplate-conan/0.1.0/user/testing/build/f6edb6b7c9d43577d91bb67d1c096d7ef852947e
-boilerplate-conan/0.1.0@user/testing: Generator cmake created conanbuildinfo.cmake
-boilerplate-conan/0.1.0@user/testing: Aggregating env generators
-boilerplate-conan/0.1.0@user/testing: Calling build()
+boilerplate-conan/0.1.0@boilerplate-conan/stable: Copying sources to build folder
+boilerplate-conan/0.1.0@boilerplate-conan/stable: Building your package in ~/.conan/data/boilerplate-conan/0.1.0/boilerplate-conan/stable/build/f6edb6b7c9d43577d91bb67d1c096d7ef852947e
+boilerplate-conan/0.1.0@boilerplate-conan/stable: Generator cmake created conanbuildinfo.cmake
+boilerplate-conan/0.1.0@boilerplate-conan/stable: Aggregating env generators
+boilerplate-conan/0.1.0@boilerplate-conan/stable: Calling build()
 -- The CXX compiler identification is GNU 9.3.0
 -- Check for working CXX compiler: /usr/bin/c++
 -- Check for working CXX compiler: /usr/bin/c++ -- works
@@ -310,7 +310,7 @@ CMake Warning:
     CMAKE_INSTALL_SBINDIR
 
 
--- Build files have been written to: ~/.conan/data/boilerplate-conan/0.1.0/user/testing/build/f6edb6b7c9d43577d91bb67d1c096d7ef852947e
+-- Build files have been written to: ~/.conan/data/boilerplate-conan/0.1.0/boilerplate-conan/stable/build/f6edb6b7c9d43577d91bb67d1c096d7ef852947e
 Scanning dependencies of target md5
 Scanning dependencies of target sample
 [ 25%] Building CXX object CMakeFiles/md5.dir/md5.cpp.o
@@ -319,25 +319,25 @@ Scanning dependencies of target sample
 [100%] Linking CXX static library lib/libmd5.a
 [100%] Built target sample
 [100%] Built target md5
-boilerplate-conan/0.1.0@user/testing: Package 'f6edb6b7c9d43577d91bb67d1c096d7ef852947e' built
-boilerplate-conan/0.1.0@user/testing: Build folder ~/.conan/data/boilerplate-conan/0.1.0/user/testing/build/f6edb6b7c9d43577d91bb67d1c096d7ef852947e
-boilerplate-conan/0.1.0@user/testing: Generated conaninfo.txt
-boilerplate-conan/0.1.0@user/testing: Generated conanbuildinfo.txt
-boilerplate-conan/0.1.0@user/testing: Generating the package
-boilerplate-conan/0.1.0@user/testing: Package folder ~/.conan/data/boilerplate-conan/0.1.0/user/testing/package/f6edb6b7c9d43577d91bb67d1c096d7ef852947e
-boilerplate-conan/0.1.0@user/testing: Calling package()
-boilerplate-conan/0.1.0@user/testing package(): Packaged 2 '.a' files: libsample.a, libmd5.a
-boilerplate-conan/0.1.0@user/testing package(): Packaged 2 '.h' files: md5.h, sample.h
-boilerplate-conan/0.1.0@user/testing: Package 'f6edb6b7c9d43577d91bb67d1c096d7ef852947e' created
-boilerplate-conan/0.1.0@user/testing: Created package revision 5d4a832af8154b5783021f38e2598b6d
-boilerplate-conan/0.1.0@user/testing (test package): Generator txt created conanbuildinfo.txt
-boilerplate-conan/0.1.0@user/testing (test package): Generator cmake created conanbuildinfo.cmake
-boilerplate-conan/0.1.0@user/testing (test package): Aggregating env generators
-boilerplate-conan/0.1.0@user/testing (test package): Generated conaninfo.txt
-boilerplate-conan/0.1.0@user/testing (test package): Generated graphinfo
+boilerplate-conan/0.1.0@boilerplate-conan/stable: Package 'f6edb6b7c9d43577d91bb67d1c096d7ef852947e' built
+boilerplate-conan/0.1.0@boilerplate-conan/stable: Build folder ~/.conan/data/boilerplate-conan/0.1.0/boilerplate-conan/stable/build/f6edb6b7c9d43577d91bb67d1c096d7ef852947e
+boilerplate-conan/0.1.0@boilerplate-conan/stable: Generated conaninfo.txt
+boilerplate-conan/0.1.0@boilerplate-conan/stable: Generated conanbuildinfo.txt
+boilerplate-conan/0.1.0@boilerplate-conan/stable: Generating the package
+boilerplate-conan/0.1.0@boilerplate-conan/stable: Package folder ~/.conan/data/boilerplate-conan/0.1.0/boilerplate-conan/stable/package/f6edb6b7c9d43577d91bb67d1c096d7ef852947e
+boilerplate-conan/0.1.0@boilerplate-conan/stable: Calling package()
+boilerplate-conan/0.1.0@boilerplate-conan/stable package(): Packaged 2 '.a' files: libsample.a, libmd5.a
+boilerplate-conan/0.1.0@boilerplate-conan/stable package(): Packaged 2 '.h' files: md5.h, sample.h
+boilerplate-conan/0.1.0@boilerplate-conan/stable: Package 'f6edb6b7c9d43577d91bb67d1c096d7ef852947e' created
+boilerplate-conan/0.1.0@boilerplate-conan/stable: Created package revision 5d4a832af8154b5783021f38e2598b6d
+boilerplate-conan/0.1.0@boilerplate-conan/stable (test package): Generator txt created conanbuildinfo.txt
+boilerplate-conan/0.1.0@boilerplate-conan/stable (test package): Generator cmake created conanbuildinfo.cmake
+boilerplate-conan/0.1.0@boilerplate-conan/stable (test package): Aggregating env generators
+boilerplate-conan/0.1.0@boilerplate-conan/stable (test package): Generated conaninfo.txt
+boilerplate-conan/0.1.0@boilerplate-conan/stable (test package): Generated graphinfo
 Using lockfile: './boilerplate-conan/test/build/7e3f3c9f8b0319ca5c01315759aeda2f877da74f/conan.lock'
 Using cached profile from lockfile
-boilerplate-conan/0.1.0@user/testing (test package): Calling build()
+boilerplate-conan/0.1.0@boilerplate-conan/stable (test package): Calling build()
 -- The CXX compiler identification is GNU 9.3.0
 -- Check for working CXX compiler: /usr/bin/c++
 -- Check for working CXX compiler: /usr/bin/c++ -- works
@@ -373,7 +373,7 @@ Scanning dependencies of target example
 [ 50%] Building CXX object CMakeFiles/example.dir/example.cpp.o
 [100%] Linking CXX executable bin/example
 [100%] Built target example
-boilerplate-conan/0.1.0@user/testing (test package): Running test()
+boilerplate-conan/0.1.0@boilerplate-conan/stable (test package): Running test()
 sample/0.2: Hello World Release!
 c3fcd3d76192e4007dfb496cca67e13b
 
