@@ -48,3 +48,8 @@ create_package:
   script:
     - bash ./bin/package.sh
     - bash ./bin/upload.sh -t ${CONAN_REGISTORY_URL}
+    - cp test/build/**/bin/*.xml .
+  artifacts:
+    when: always
+    reports:
+      junit: CUnitAutomated-Results.xml
