@@ -2,6 +2,10 @@
 
 Conan を使用して、cunit テストを実行しますプロジェクト用のサンプルです。
 
+## GitHub
+
+[![conan ci](https://github.com/kannkyo/boilerplate-conan/actions/workflows/conan-ci.yml/badge.svg)](https://github.com/kannkyo/boilerplate-conan/actions/workflows/conan-ci.yml)
+
 ## 環境構築
 
 ### 前提条件
