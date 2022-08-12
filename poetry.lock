@@ -47,7 +47,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
 name = "conan"
-version = "1.51.0"
+version = "1.51.2"
 description = "Conan C/C++ package manager"
 category = "main"
 optional = false
@@ -246,9 +246,9 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,>=2.7"
 colorama = {version = "*", markers = "platform_system == \"Windows\""}
 
 [package.extras]
-dev = ["py-make (>=0.1.0)", "twine", "wheel"]
-notebook = ["ipywidgets (>=6)"]
 telegram = ["requests"]
+notebook = ["ipywidgets (>=6)"]
+dev = ["wheel", "twine", "py-make (>=0.1.0)"]
 
 [[package]]
 name = "urllib3"
@@ -266,7 +266,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "107410906fdee8573f051206ed5673d5d9f4e01970a5db7eaf0700e658ac6df2"
+content-hash = "7212e1d90f080a00f245f09b721cf22f7a1b53478c80800d5e7f7045e2b713d2"
 
 [metadata.files]
 autopep8 = [
@@ -290,7 +290,7 @@ colorama = [
     {file = "colorama-0.4.4.tar.gz", hash = "sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"},
 ]
 conan = [
-    {file = "conan-1.51.0.tar.gz", hash = "sha256:2dc8a13e1a38052ee6bdab4f054a1ce91b3bb609673e3e05adb77f688d06ff25"},
+    {file = "conan-1.51.2.tar.gz", hash = "sha256:a7ebf0909333af5dc43212b501db0e5a8630d33d7e32fa1e3750aa54b0351a21"},
 ]
 distro = [
     {file = "distro-1.6.0-py2.py3-none-any.whl", hash = "sha256:c8713330ab31a034623a9515663ed87696700b55f04556b97c39cd261aa70dc7"},
